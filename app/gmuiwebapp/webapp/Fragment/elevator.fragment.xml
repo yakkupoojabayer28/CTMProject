@@ -1,0 +1,85 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        title="Elevator Selection"
+        contentWidth="500px"
+        contentHeight="400px"
+    >
+        <OverflowToolbar>
+            <SearchField
+                liveChange="onSearchPressLiveChange"
+                search="onSearchPressLiveChange"
+                width="45%"
+                placeholder=""
+            >
+                <customData>
+                    <core:CustomData
+                        key="column1"
+                        value="Elevator_Code"
+                    />
+                    <core:CustomData
+                        key="column2"
+                        value="Agriculture_Commodity_Exchange"
+                    />
+                </customData>
+            </SearchField>
+            <SearchField
+                liveChange="onSearchPressLiveChange"
+                search="onSearchPressLiveChange"
+                width="45%"
+                placeholder=""
+            >
+                <customData>
+                    <core:CustomData
+                        key="column1"
+                        value="Elevator_Code"
+                    />
+                    <core:CustomData
+                        key="column2"
+                        value="Agriculture_Commodity_Exchange"
+                    />
+                </customData>
+            </SearchField>
+        </OverflowToolbar>
+        <Table
+            items="{mainModel>/Agriculture_Elevator_Prices}"
+            mode="SingleSelectLeft"
+        >
+            <items>
+                <ColumnListItem type="Active">
+                    <cells>
+                        <Text text="{mainModel>Elevator_Code}" />
+                        <Text
+                            text="{mainModel>Agriculture_Commodity_Exchange}"
+                        />
+                    </cells>
+                </ColumnListItem>
+            </items>
+            <columns>
+                <Column>
+                    <header>
+                        <Label text="Elevator Code" />
+                    </header>
+                </Column>
+                <Column>
+                    <header>
+                        <Label text="Name" />
+                    </header>
+                </Column>
+            </columns>
+        </Table>
+        <buttons>
+            <Button
+                text="OK"
+                press="onOkDialog"
+                type="Emphasized"
+            />
+            <Button
+                text="Close"
+                press=".onCloseDialog"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

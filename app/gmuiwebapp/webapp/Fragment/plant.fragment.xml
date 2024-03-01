@@ -1,0 +1,83 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        title="Plant Selection"
+        contentWidth="500px"
+        contentHeight="400px"
+    >
+        <OverflowToolbar>
+            <SearchField
+                liveChange="onSearchPressLiveChange"
+                search="onSearchPressLiveChange"
+                width="45%"
+                placeholder=""
+            >
+                <customData>
+                    <core:CustomData
+                        key="column1"
+                        value="plant"
+                    />
+                    <core:CustomData
+                        key="column2"
+                        value="plant_name"
+                    />
+                </customData>
+            </SearchField>
+            <SearchField
+                liveChange="onSearchPressLiveChange"
+                search="onSearchPressLiveChange"
+                width="45%"
+                placeholder=""
+            >
+                <customData>
+                    <core:CustomData
+                        key="column1"
+                        value="plant"
+                    />
+                    <core:CustomData
+                        key="column2"
+                        value="plant_name"
+                    />
+                </customData>
+            </SearchField>
+        </OverflowToolbar>
+        <Table
+            items="{ContractModel>/YYMPU_C_PLANT}"
+            mode="SingleSelectLeft"
+        >
+            <items>
+                <ColumnListItem type="Active">
+                    <cells>
+                        <Text text="{ContractModel>plant}" />
+                        <Text text="{ContractModel>plant_name}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+            <columns>
+                <Column>
+                    <header>
+                        <Label text="Plant" />
+                    </header>
+                </Column>
+                <Column>
+                    <header>
+                        <Label text="Plant Name" />
+                    </header>
+                </Column>
+            </columns>
+        </Table>
+        <buttons>
+            <Button
+                text="OK"
+                press="onOkDialog"
+                type="Emphasized"
+            />
+            <Button
+                text="Close"
+                press=".onCloseDialog"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,3 @@
+﻿Client,Plant,Field_Number,Account_Number_of_Vendor_or_Creditor,Growing_Location,Est_Total_Field_Acres,Field_Unit_of_Measure,Irrigation_flag,County_Code,Township_Code,Township_Range_Code,Field_section,Field_Quarter,Common_Name,Region_State_Province_County,Country_Key,Miles_from_the_Field_to_the_Plant,GPS_Coordinate_1,GPS_Coordinate_2,GPS_Coordinate_3,GPS_Coordinate_4
+300,1710,5128,17300006,1,64.000,%,Y,001,T35N,R3W,10,NE1/4,SHARON'S HWY 39 AND RR TRACKS,AK,US,6.00,,,,
+300,1710,5129,9980000161,1,107.500,ONE,N,001,T35N,R2W,6,SW1/4,CRAFT (TWIN FIELDS),AE,US,6.00,,,,

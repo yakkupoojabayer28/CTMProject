@@ -1,0 +1,50 @@
+{
+    "Formdata": {
+        "primaryGrower": "",
+        "primaryGrowerDescription": "",
+        "contractType": "",
+        "contractTypeDescritpion": "",
+        "contractDate": "",
+        "plant": "",
+        "cropYear": "",
+        "field": "",
+        "fieldDescription": "",
+        "specie": "",
+        "specieDescription": "",
+        "growLocation": "",
+        "pricingSource": "",
+        "estimatedContractedArea": "",
+        "estimatedContractedAreaDescription" : "",
+        "estimatedYieldPerAreaUoM": "",
+        "estimatedYieldPerAreaUoMDescription" : "",
+        "estimatedGrossYield": "",
+        "estimatedGrossYieldDescription": "",
+        "elevator": "",
+        "guaranteeYield": "",
+        "guaranteeYieldDescription": "",
+        "companyCode" : "",
+        "purchasingOrganization": "",
+        "purchasingGroup": ""
+    },
+    "partnerActivities": [],
+    "index": "",
+    "contractType": "ct",
+    "partners": [],
+    "items": [],
+    "primaryGrower": "",
+    "attorneyPartners": [],
+    "roleDetails": [
+        {
+            "Role": "G",
+            "Grower": "Grower"
+        },
+        {
+            "Role": "L",
+            "Grower": "Land owner"
+        }
+    ],
+    "itemTableData": [
+        
+    ],
+    "action": ""
+}

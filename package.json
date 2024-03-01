@@ -1,0 +1,48 @@
+{
+  "name": "mta-project",
+  "version": "0.0.1",
+  "description": "Build and deployment scripts",
+  "dependencies": {
+    "@sap-cloud-sdk/http-client": "^3.9.0",
+    "@sap/cds": "^7",
+    "express": "^4"
+  },
+  "scripts": {
+    "clean": "rimraf resources mta_archives mta-op*",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "undeploy": "cf undeploy gmui --delete-services --delete-service-keys --delete-service-brokers",
+    "watch-gmuiwebapp": "cds watch --open /index.html?sap-ui-xx-viewCache=false",
+    "start": "cds-serve"
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "^7",
+    "@sap/ux-specification": "^1.120.0",
+    "mbt": "^1.2.18",
+    "rimraf": "^3.0.2"
+  },
+  "cds": {
+    "requires": {
+      "metadata": {
+        "kind": "odata-v2",
+        "model": "srv/external/ZBYGL_S2P_C_SB_CONTRACT",
+        "[development]": {
+          "credentials": {
+            "url": "http://s0s.lb.virtual:443/sap/opu/odata/sap/ZBYGL_S2P_C_SB_CONTRACT",
+            "authentication": "BasicAuthentication",
+            "username": "EJWVP",
+            "password": "Aaradhya@123",
+            "HTML5.DynamicDestination": true,
+            "Type" : "HTTP",
+            "Proxy Type" : "OnPremise",
+            "WebIDEUsage": "odata_abap,ui5_execute_abap,dev_abap,odata_gen"
+          }
+        }
+      },
+      "ZBYGL_S2P_C_SB_CONTRACT": {
+        "kind": "odata-v2",
+        "model": "srv/external/ZBYGL_S2P_C_SB_CONTRACT"
+      }
+    }
+  }
+}

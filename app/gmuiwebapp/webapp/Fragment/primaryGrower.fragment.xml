@@ -1,0 +1,83 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        title="Primary Grower Selection"
+        contentWidth="500px"
+        contentHeight="400px"
+    >
+        <OverflowToolbar>
+            <SearchField
+                liveChange="onSearchPressLiveChange"
+                search="onSearchPressLiveChange"
+                width="45%"
+                placeholder=""
+            >
+                <customData>
+                    <core:CustomData
+                        key="column1"
+                        value="vendor"
+                    />
+                    <core:CustomData
+                        key="column2"
+                        value="Name"
+                    />
+                </customData>
+            </SearchField>
+            <SearchField
+                liveChange="onSearchPressLiveChange"
+                search="onSearchPressLiveChange"
+                width="45%"
+                placeholder=""
+            >
+                <customData>
+                    <core:CustomData
+                        key="column1"
+                        value="vendor"
+                    />
+                    <core:CustomData
+                        key="column2"
+                        value="Name"
+                    />
+                </customData>
+            </SearchField>
+        </OverflowToolbar>
+        <Table
+            items="{path: 'ContractModel>/YYMPU_GM_Vendor_f4', parameters: {arrayNames:['items'], countMode:'Inline'}, sorter: {path: 'vendor'}}"
+            mode="SingleSelectLeft"
+        >
+            <items>
+                <ColumnListItem type="Active">
+                    <cells>
+                        <Text text="{ContractModel>vendor}" />
+                        <Text text="{ContractModel>Name}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+            <columns>
+                <Column>
+                    <header>
+                        <Label text="Vendor" />
+                    </header>
+                </Column>
+                <Column>
+                    <header>
+                        <Label text="Name" />
+                    </header>
+                </Column>
+            </columns>
+        </Table>
+        <buttons>
+            <Button
+                text="OK"
+                press="onOkDialog"
+                type="Emphasized"
+            />
+            <Button
+                text="Close"
+                press=".onCloseDialog"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

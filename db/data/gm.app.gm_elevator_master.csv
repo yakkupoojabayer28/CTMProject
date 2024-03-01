@@ -1,0 +1,3 @@
+﻿Client,Elevator_Code,Plant,Name,Elevator_Address,City,Region,Postal_Code,First_telephone_number,Elevator_Contact,Active_Record_Flag,Country_Key,Agriculture_Commodity_Exchange
+300,1,1710,Consolidated Grain-Mounds City,Chicago Board of Trade,0001,AK,1,870-338-8112,Tom Russell,Y,US,CBOT
+300,2,1710,Bunge  Helena,Riverside Drive and Levee,0001,AL,9,901-525-0055,John Cordel - Mgr,N,US,CBOT

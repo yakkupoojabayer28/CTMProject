@@ -1,0 +1,31 @@
+{
+  "name": "mta-project",
+  "version": "0.0.1",
+  "description": "Build and deployment scripts",
+  "dependencies": {
+    "@sap/cds": "^7",
+    "express": "^4"
+  },
+  "scripts": {
+    "clean": "rimraf resources mta_archives mta-op*",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "undeploy": "cf undeploy gmui --delete-services --delete-service-keys --delete-service-brokers",
+    "watch-gmuiwebapp": "cds watch --open gmuiwebapp/webapp/index.html?sap-ui-xx-viewCache=false",
+    "start": "cds-serve"
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "^7",
+    "@sap/ux-specification": "^1.120.0",
+    "mbt": "^1.2.18",
+    "rimraf": "^3.0.2"
+  },
+  "cds": {
+    "requires": {
+      "metadata": {
+        "kind": "odata-v2",
+        "model": "srv/external/metadata"
+      }
+    }
+  }
+}

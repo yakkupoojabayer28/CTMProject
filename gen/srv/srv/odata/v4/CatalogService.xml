@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml">
+    <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+    <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+    <Schema Namespace="CatalogService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="EntityContainer">
+        <EntitySet Name="ZBYCS_S2P_C_T001" EntityType="CatalogService.ZBYCS_S2P_C_T001"/>
+        <EntitySet Name="ZBYCS_S2P_C_TCURC" EntityType="CatalogService.ZBYCS_S2P_C_TCURC"/>
+        <EntitySet Name="ZBYCS_S2P_C_FIELD" EntityType="CatalogService.ZBYCS_S2P_C_FIELD"/>
+        <EntitySet Name="ZBYCS_S2P_C_T001W" EntityType="CatalogService.ZBYCS_S2P_C_T001W"/>
+        <EntitySet Name="ZBYCS_S2P_C_LFA1" EntityType="CatalogService.ZBYCS_S2P_C_LFA1"/>
+        <EntitySet Name="ZBYCS_S2P_C_T005E" EntityType="CatalogService.ZBYCS_S2P_C_T005E"/>
+        <EntitySet Name="ZBYCS_S2P_C_T005" EntityType="CatalogService.ZBYCS_S2P_C_T005"/>
+        <EntitySet Name="ZBYCS_S2P_C_T005s" EntityType="CatalogService.ZBYCS_S2P_C_T005s"/>
+        <EntitySet Name="ZBYCS_S2P_C_YGREL" EntityType="CatalogService.ZBYCS_S2P_C_YGREL"/>
+        <EntitySet Name="ZBYCS_S2P_C_T005G" EntityType="CatalogService.ZBYCS_S2P_C_T005G"/>
+        <EntitySet Name="ZBYCS_S2P_C_T5V01" EntityType="CatalogService.ZBYCS_S2P_C_T5V01"/>
+        <EntitySet Name="ZBYCS_S2P_C_CONT_TYPE" EntityType="CatalogService.ZBYCS_S2P_C_CONT_TYPE"/>
+        <EntitySet Name="ZBYCS_S2P_C_T161" EntityType="CatalogService.ZBYCS_S2P_C_T161"/>
+        <EntitySet Name="ZBYCS_S2P_C_SEASON_YR" EntityType="CatalogService.ZBYCS_S2P_C_SEASON_YR"/>
+        <EntitySet Name="ZBYCS_S2P_C_GROWLOC_LK" EntityType="CatalogService.ZBYCS_S2P_C_GROWLOC_LK"/>
+        <EntitySet Name="ZBYCS_S2P_C_VARIETY" EntityType="CatalogService.ZBYCS_S2P_C_VARIETY"/>
+        <EntitySet Name="ZBYCS_S2P_C_MARA" EntityType="CatalogService.ZBYCS_S2P_C_MARA"/>
+        <EntitySet Name="ZBYCS_S2P_C_VAR_REGION" EntityType="CatalogService.ZBYCS_S2P_C_VAR_REGION"/>
+        <EntitySet Name="ZBYCS_S2P_C_CLR_RATE" EntityType="CatalogService.ZBYCS_S2P_C_CLR_RATE"/>
+        <EntitySet Name="ZBYCS_S2P_C_ZPLANT" EntityType="CatalogService.ZBYCS_S2P_C_ZPLANT"/>
+        <EntitySet Name="ZBYCS_S2P_C_YPAT_CNTR" EntityType="CatalogService.ZBYCS_S2P_C_YPAT_CNTR"/>
+        <EntitySet Name="ZBYCS_S2P_C_YMM_GUIXT_PARMS" EntityType="CatalogService.ZBYCS_S2P_C_YMM_GUIXT_PARMS"/>
+        <EntitySet Name="ZBYCS_S2P_C_EXCHPRICE" EntityType="CatalogService.ZBYCS_S2P_C_EXCHPRICE"/>
+        <EntitySet Name="ZBYCS_S2P_C_ELEV_PRICE" EntityType="CatalogService.ZBYCS_S2P_C_ELEV_PRICE"/>
+        <EntitySet Name="ZBYCS_S2P_C_SPECIE" EntityType="CatalogService.ZBYCS_S2P_C_SPECIE"/>
+        <EntitySet Name="ZBYCS_S2P_C_PRICE_ALT" EntityType="CatalogService.ZBYCS_S2P_C_PRICE_ALT"/>
+        <EntitySet Name="ZBYCS_S2P_C_GROWLOC" EntityType="CatalogService.ZBYCS_S2P_C_GROWLOC"/>
+        <EntitySet Name="ZBYCS_S2P_C_YPUGA_PRODSEAS" EntityType="CatalogService.ZBYCS_S2P_C_YPUGA_PRODSEAS"/>
+        <EntitySet Name="ZBYCS_S2P_C_T002" EntityType="CatalogService.ZBYCS_S2P_C_T002"/>
+        <EntitySet Name="ZBYCS_S2P_C_ROLE" EntityType="CatalogService.ZBYCS_S2P_C_ROLE"/>
+      </EntityContainer>
+      <EntityType Name="ZBYCS_S2P_C_T001">
+        <Key>
+          <PropertyRef Name="Company_Code"/>
+        </Key>
+        <Property Name="Client" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Company_Code" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Name_of_Company_Code_or_Company" Type="Edm.String" MaxLength="25"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_TCURC">
+        <Key>
+          <PropertyRef Name="Currency_Key"/>
+        </Key>
+        <Property Name="Client" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Currency_Key" Type="Edm.String" MaxLength="5" Nullable="false"/>
+        <Property Name="ISO_currency_code" Type="Edm.String" MaxLength="3"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_FIELD">
+        <Key>
+          <PropertyRef Name="Plant"/>
+          <PropertyRef Name="Field_Number"/>
+        </Key>
+        <Property Name="Client" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Plant" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Field_Number" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="Account_Number_of_Vendor_or_Creditor" Type="Edm.String" MaxLength="10"/>
+        <Property Name="Growing_Location" Type="Edm.Int32"/>
+        <Property Name="Est_Total_Field_Acres" Type="Edm.String" MaxLength="10"/>
+        <Property Name="Field_Unit_of_Measure" Type="Edm.Int32"/>
+        <Property Name="Irrigation_flag" Type="Edm.String" MaxLength="1"/>
+        <Property Name="County_Code" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Township_Code" Type="Edm.String" MaxLength="40"/>
+        <Property Name="Township_Range_Code" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Field_section" Type="Edm.Int32"/>
+        <Property Name="Field_Quarter" Type="Edm.String" MaxLength="5"/>
+        <Property Name="Common_Name" Type="Edm.String" MaxLength="40"/>
+        <Property Name="Region_State_Province_County" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Country_Key" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Miles_from_the_Field_to_the_Plant" Type="Edm.Decimal" Precision="5"/>
+        <Property Name="GPS_Coordinate_1" Type="Edm.String" MaxLength="15"/>
+        <Property Name="GPS_Coordinate_2" Type="Edm.String" MaxLength="15"/>
+        <Property Name="GPS_Coordinate_3" Type="Edm.String" MaxLength="15"/>
+        <Property Name="GPS_Coordinate_4" Type="Edm.String" MaxLength="15"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_T001W">
+        <Key>
+          <PropertyRef Name="Plant"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Plant" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Name" Type="Edm.String" MaxLength="30"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_LFA1">
+        <Key>
+          <PropertyRef Name="Account_Number_of_Vendor_or_Creditor"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Account_Number_of_Vendor_or_Creditor" Type="Edm.String" MaxLength="10" Nullable="false"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_T005E">
+        <Key>
+          <PropertyRef Name="Region"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Country_Key" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Region" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="County_Code" Type="Edm.String" MaxLength="3"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_T005">
+        <Key>
+          <PropertyRef Name="Country_Key"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Country_Key" Type="Edm.String" MaxLength="3" Nullable="false"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_T005s">
+        <Key>
+          <PropertyRef Name="Country_Key"/>
+          <PropertyRef Name="Region"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Country_Key" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="Region" Type="Edm.String" MaxLength="3" Nullable="false"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_YGREL">
+        <Key>
+          <PropertyRef Name="Elevator_Code"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Elevator_Code" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="Plant" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Name" Type="Edm.String" MaxLength="30"/>
+        <Property Name="Elevator_Address" Type="Edm.String" MaxLength="30"/>
+        <Property Name="City" Type="Edm.String" MaxLength="25"/>
+        <Property Name="Region" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Postal_Code" Type="Edm.String" MaxLength="10"/>
+        <Property Name="First_telephone_number" Type="Edm.String" MaxLength="16"/>
+        <Property Name="Elevator_Contact" Type="Edm.String" MaxLength="30"/>
+        <Property Name="Active_Record_Flag" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Country_Key" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Agriculture_Commodity_Exchange" Type="Edm.String" MaxLength="4"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_T005G">
+        <Key>
+          <PropertyRef Name="Country_Key"/>
+          <PropertyRef Name="Region"/>
+          <PropertyRef Name="City_Code"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Country_Key" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="Region" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="City_Code" Type="Edm.String" MaxLength="4" Nullable="false"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_T5V01">
+        <Key>
+          <PropertyRef Name="Postal_code"/>
+        </Key>
+        <Property Name="Postal_code" Type="Edm.String" MaxLength="10" Nullable="false"/>
+        <Property Name="City" Type="Edm.String" MaxLength="30"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_CONT_TYPE">
+        <Key>
+          <PropertyRef Name="Company_Code"/>
+          <PropertyRef Name="Season_Year"/>
+          <PropertyRef Name="Purchasing_Document_Type"/>
+        </Key>
+        <Property Name="Client" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Company_Code" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Season_Year" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="Purchasing_Document_Type" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Specie" Type="Edm.String" MaxLength="2"/>
+        <Property Name="CCE_Bushel_Area_Base_Yield" Type="Edm.Decimal" Precision="5"/>
+        <Property Name="Estimated_Price" Type="Edm.Int32"/>
+        <Property Name="Currency_Key" Type="Edm.Int32"/>
+        <Property Name="Complex_Seed_Stock_Pricing" Type="Edm.String" MaxLength="1"/>
+        <Property Name="BU_deduction_factor" Type="Edm.Decimal" Precision="4"/>
+        <Property Name="GYI_Variable_Bushels" Type="Edm.Int32"/>
+        <Property Name="GYI_Max_Premium_Increase" Type="Edm.Int32"/>
+        <Property Name="Hauling_Info_Relevant" Type="Edm.String" MaxLength="1"/>
+        <Property Name="GYI_Premium_Maximum" Type="Edm.Int32"/>
+        <Property Name="GYI_Premium_Minimum" Type="Edm.Int32"/>
+        <Property Name="GYI_Min_Premium_Increase" Type="Edm.Int32"/>
+        <Property Name="GYI_Minimum" Type="Edm.Int32"/>
+        <Property Name="GYI_Minimum_for_Single_Field_Contract" Type="Edm.Int32"/>
+        <Property Name="GYI_Maximum" Type="Edm.Int32"/>
+        <Property Name="Factor_Flag" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Guaranteed_Yield_Acre" Type="Edm.String" MaxLength="1"/>
+        <Property Name="MPCI" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Moisture_Deduction_Factor" Type="Edm.Decimal" Precision="5"/>
+        <Property Name="Priced_By_Percent" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Price_Basis_Range" Type="Edm.Decimal" Precision="6"/>
+        <Property Name="Price_Method" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Grower_Charged_for_Seed_Stock" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Standard_Moisture" Type="Edm.Decimal" Precision="5"/>
+        <Property Name="Contract_Designation" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Usage_Percentage" Type="Edm.Decimal" Precision="5"/>
+        <Property Name="CCE_Calc" Type="Edm.String" MaxLength="1"/>
+        <Property Name="CCE_Bushel_Grower_Index_Factor" Type="Edm.Decimal" Precision="5"/>
+        <Property Name="County_Loan_Rate_Eligible" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Production_Order_Type" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Account_assignment_category" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Hedging_Relevant" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Pay_limit" Type="Edm.Decimal" Precision="5"/>
+        <Property Name="Single_Field_Contract_Type" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Indicates_the_contract_type_will_pay_based_on_HarvestBushels" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Flag_indicating_the_contract_type_is_valid_for_LDP_pricing" Type="Edm.String" MaxLength="1"/>
+        <Property Name="CCE_for_Rotated_Acre_Increase" Type="Edm.Decimal" Precision="3"/>
+        <Property Name="Premium_Name" Type="Edm.String" MaxLength="10"/>
+        <Property Name="Overall_Limit_Multiplier" Type="Edm.Int32"/>
+        <Property Name="Auto_Pay_date" Type="Edm.Date"/>
+        <Property Name="Default_Acres_Switch" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Percent_Target" Type="Edm.Decimal" Precision="5"/>
+        <Property Name="Initial_Payment_Percentage_for_WashingtonFoundation_Contract" Type="Edm.Decimal" Precision="5"/>
+        <Property Name="Percentage_for_Isolated_discard_acres_Washington_fnd_cntrt" Type="Edm.Decimal" Precision="5"/>
+        <Property Name="Actual_CCE_Bushels_Acre" Type="Edm.Decimal" Precision="3"/>
+        <Property Name="Tolerance_limit_on_payment_per_acre" Type="Edm.Decimal" Precision="7"/>
+        <Property Name="Isolation_Bushels" Type="Edm.Int32"/>
+        <Property Name="Check_to_Create_DS_Order" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Percent_of_LCCE_for_Discard_Acres" Type="Edm.Decimal" Precision="5"/>
+        <Property Name="Precommercial_Utilization_Increasing_Factor" Type="Edm.Decimal" Precision="10"/>
+        <Property Name="Rotational_Area_Greater_than_Actual_Area" Type="Edm.String" MaxLength="1"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_T161">
+        <Key>
+          <PropertyRef Name="Purchasing_Document_Category"/>
+          <PropertyRef Name="Purchasing_Document_Type"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Purchasing_Document_Category" Type="Edm.String" MaxLength="1" Nullable="false"/>
+        <Property Name="Purchasing_Document_Type" Type="Edm.String" MaxLength="4" Nullable="false"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_SEASON_YR">
+        <Key>
+          <PropertyRef Name="Specie"/>
+          <PropertyRef Name="Start_Date"/>
+          <PropertyRef Name="End_Date"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Specie" Type="Edm.String" MaxLength="2" Nullable="false"/>
+        <Property Name="Start_Date" Type="Edm.Date" Nullable="false"/>
+        <Property Name="End_Date" Type="Edm.Date" Nullable="false"/>
+        <Property Name="Season_Year" Type="Edm.Int32"/>
+        <Property Name="First_Date_the_grower_can_price_contracts" Type="Edm.Date"/>
+        <Property Name="Last_Date_the_user_can_price_contracts" Type="Edm.Date"/>
+        <Property Name="Farmsource_End_date" Type="Edm.Date"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_GROWLOC_LK">
+        <Key>
+          <PropertyRef Name="Plant"/>
+          <PropertyRef Name="Grow_Location"/>
+          <PropertyRef Name="Growing_Location_Name"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Plant" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Grow_Location" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="Growing_Location_Name" Type="Edm.String" MaxLength="30" Nullable="false"/>
+        <Property Name="Geographical_Area_Direction" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Environment_code" Type="Edm.String" MaxLength="5"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_VARIETY">
+        <Key>
+          <PropertyRef Name="Company_Code"/>
+          <PropertyRef Name="Season_Year"/>
+        </Key>
+        <Property Name="Client" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Company_Code" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Season_Year" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="Production_Season_ID" Type="Edm.String" MaxLength="2"/>
+        <Property Name="Plant" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Grow_Location" Type="Edm.Int32"/>
+        <Property Name="Material_Number" Type="Edm.String" MaxLength="18"/>
+        <Property Name="Estimated_Yield_Target" Type="Edm.Int32"/>
+        <Property Name="UOM_for_Yield_Fields" Type="Edm.Int32"/>
+        <Property Name="Estimated_Yield_FNG" Type="Edm.Decimal" Precision="6"/>
+        <Property Name="Percent_of_Target" Type="Edm.Int32"/>
+        <Property Name="Clean_Out_Percent" Type="Edm.Decimal" Precision="5"/>
+        <Property Name="Sorghum_Factor" Type="Edm.Decimal" Precision="7"/>
+        <Property Name="Warm_Germ_Target_Percent" Type="Edm.Int32"/>
+        <Property Name="Cold_Germ_Target_Percent" Type="Edm.Int32"/>
+        <Property Name="Seed_Stock_Tech_Fee" Type="Edm.Int32"/>
+        <Property Name="Bin_Rank_Flag" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Seed_Stock_Standard_Price" Type="Edm.Int32"/>
+        <Property Name="Seed_Stock_Option_Price" Type="Edm.Int32"/>
+        <Property Name="Seed_Stock_Foundation_Price" Type="Edm.Int32"/>
+        <Property Name="Currency_Key" Type="Edm.Int32"/>
+        <Property Name="Screen_Size_for_Sorghum" Type="Edm.Decimal" Scale="variable"/>
+        <Property Name="Variety_Premium" Type="Edm.Int32"/>
+        <Property Name="Planting_Instructions" Type="Edm.String" MaxLength="20"/>
+        <Property Name="Payment_Factor" Type="Edm.Decimal" Precision="4"/>
+        <Property Name="Planned_Dry_Shell" Type="Edm.Int32"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_MARA">
+        <Key>
+          <PropertyRef Name="Material_Number"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Material_Number" Type="Edm.String" MaxLength="18" Nullable="false"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_VAR_REGION">
+        <Key>
+          <PropertyRef Name="Company_Code"/>
+          <PropertyRef Name="Season_Year"/>
+          <PropertyRef Name="Purchasing_Document_Type"/>
+          <PropertyRef Name="Material_Number"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Company_Code" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Season_Year" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="Purchasing_Document_Type" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Material_Number" Type="Edm.String" MaxLength="18" Nullable="false"/>
+        <Property Name="Variety_Premium" Type="Edm.Int32"/>
+        <Property Name="BUYOUT_FEE" Type="Edm.Int32"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_CLR_RATE">
+        <Key>
+          <PropertyRef Name="Season_Year"/>
+          <PropertyRef Name="Specie"/>
+          <PropertyRef Name="Country_Key"/>
+          <PropertyRef Name="Region"/>
+          <PropertyRef Name="County_Code"/>
+          <PropertyRef Name="Activity_Number"/>
+          <PropertyRef Name="County_Loan_Rate_MPCI_Percent"/>
+          <PropertyRef Name="Currency_Key"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Season_Year" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="Specie" Type="Edm.String" MaxLength="2" Nullable="false"/>
+        <Property Name="Country_Key" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="Region" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="County_Code" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="Activity_Number" Type="Edm.String" MaxLength="18" Nullable="false"/>
+        <Property Name="County_Loan_Rate_MPCI_Percent" Type="Edm.Decimal" Precision="8" Nullable="false"/>
+        <Property Name="Currency_Key" Type="Edm.Int32" Nullable="false"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_ZPLANT">
+        <Key>
+          <PropertyRef Name="Plant"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Plant" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Purchasing_Group" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Purchasing_Organization" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Order_Type" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Tax_on_sales_purchases_code" Type="Edm.String" MaxLength="2"/>
+        <Property Name="Incoterms" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Spool_default_printer" Type="Edm.String" MaxLength="10"/>
+        <Property Name="Plant_Type" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Plant_Growing_Status" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Plant_Mthr" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Common_Plant_Name" Type="Edm.String" MaxLength="30"/>
+        <Property Name="Plant_Manager_Name" Type="Edm.String" MaxLength="30"/>
+        <Property Name="Load_Ticke_RFID_Layout" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Spool_RFI_printer" Type="Edm.String" MaxLength="4"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_YPAT_CNTR">
+        <Key>
+          <PropertyRef Name="Country_Key"/>
+          <PropertyRef Name="Plant"/>
+          <PropertyRef Name="Specie"/>
+          <PropertyRef Name="Parental_Flag"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Country_Key" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="Plant" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Specie" Type="Edm.String" MaxLength="2" Nullable="false"/>
+        <Property Name="Parental_Flag" Type="Edm.String" MaxLength="1" Nullable="false"/>
+        <Property Name="Order_Type" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Account_assignment_category" Type="Edm.String" MaxLength="3"/>
+        <Property Name="General_settlement_receiver" Type="Edm.String" MaxLength="35"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_YMM_GUIXT_PARMS">
+        <Key>
+          <PropertyRef Name="Plant"/>
+          <PropertyRef Name="Order_Type"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Plant" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Order_Type" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Specie_code_used_in_GuiXT_scripts" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Company_Code" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Purchasing_Organization" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Purchasing_Group" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Tax_on_sales_purchases_code" Type="Edm.String" MaxLength="2"/>
+        <Property Name="Incoterms" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Confirmation_Control_Key" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Contract_Unit_of_Measure" Type="Edm.Int32"/>
+        <Property Name="Contract_Area_UOM_Text" Type="Edm.String" MaxLength="10"/>
+        <Property Name="UOM_for_Yield_Fields" Type="Edm.Int32"/>
+        <Property Name="Estimated_Yield_UOM_Text" Type="Edm.String" MaxLength="10"/>
+        <Property Name="Tracking_Number_Switch" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Spool_Output_device" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Mother_Plant" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Indicate_when_to_bypass_the_target_qty_calculation" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Bypass_Grower_Splits_screen" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Indicator_for_displaying_Season_ID" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Indicator_for_displaying_Get_Batch" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Tax_Code_to_use_when_vendor_has_VAT" Type="Edm.String" MaxLength="2"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_EXCHPRICE">
+        <Key>
+          <PropertyRef Name="Agriculture_Commodity_Exchange"/>
+          <PropertyRef Name="Specie"/>
+          <PropertyRef Name="Market_Date"/>
+          <PropertyRef Name="Price_Month"/>
+          <PropertyRef Name="Price_Year"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Agriculture_Commodity_Exchange" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Specie" Type="Edm.String" MaxLength="2" Nullable="false"/>
+        <Property Name="Market_Date" Type="Edm.Date" Nullable="false"/>
+        <Property Name="Price_Month" Type="Edm.String" MaxLength="2" Nullable="false"/>
+        <Property Name="Price_Year" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="Market_Close_Price" Type="Edm.Decimal" Precision="10"/>
+        <Property Name="Market_High_Price" Type="Edm.Decimal" Precision="10"/>
+        <Property Name="Currency_Key" Type="Edm.Int32"/>
+        <Property Name="Create_Dates" Type="Edm.Date"/>
+        <Property Name="Creation_Time" Type="Edm.TimeOfDay"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_ELEV_PRICE">
+        <Key>
+          <PropertyRef Name="Agriculture_Commodity_Exchange"/>
+          <PropertyRef Name="Specie"/>
+          <PropertyRef Name="Elevator_Code"/>
+          <PropertyRef Name="Elevator_Price_Type"/>
+          <PropertyRef Name="Price_Month"/>
+          <PropertyRef Name="Price_Year"/>
+          <PropertyRef Name="Start_Date"/>
+          <PropertyRef Name="Create_Dates"/>
+          <PropertyRef Name="Creation_Time"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Agriculture_Commodity_Exchange" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Specie" Type="Edm.String" MaxLength="2" Nullable="false"/>
+        <Property Name="Elevator_Code" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="Elevator_Price_Type" Type="Edm.String" MaxLength="2" Nullable="false"/>
+        <Property Name="Price_Month" Type="Edm.String" MaxLength="2" Nullable="false"/>
+        <Property Name="Price_Year" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="Start_Date" Type="Edm.Date" Nullable="false"/>
+        <Property Name="Create_Dates" Type="Edm.Date" Nullable="false"/>
+        <Property Name="Creation_Time" Type="Edm.TimeOfDay" Nullable="false"/>
+        <Property Name="End_Date" Type="Edm.Date"/>
+        <Property Name="Price" Type="Edm.Decimal" Precision="8"/>
+        <Property Name="Currency_Key" Type="Edm.Int32"/>
+        <Property Name="Created_By" Type="Edm.String" MaxLength="12"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_SPECIE">
+        <Key>
+          <PropertyRef Name="Specie"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Specie" Type="Edm.String" MaxLength="2" Nullable="false"/>
+        <Property Name="Specie_Description" Type="Edm.String" MaxLength="35"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_PRICE_ALT">
+        <Key>
+          <PropertyRef Name="Season_Year"/>
+          <PropertyRef Name="Company_Code"/>
+          <PropertyRef Name="Specie"/>
+          <PropertyRef Name="Price_Month"/>
+          <PropertyRef Name="Price_Year"/>
+          <PropertyRef Name="From_Market_Date"/>
+          <PropertyRef Name="To_Market_Date"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Season_Year" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="Season_ID" Type="Edm.String" MaxLength="2"/>
+        <Property Name="Company_Code" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Specie" Type="Edm.String" MaxLength="2" Nullable="false"/>
+        <Property Name="Price_Month" Type="Edm.String" MaxLength="2" Nullable="false"/>
+        <Property Name="Price_Year" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="From_Market_Date" Type="Edm.Date" Nullable="false"/>
+        <Property Name="To_Market_Date" Type="Edm.Date" Nullable="false"/>
+        <Property Name="Requested_Check_Date" Type="Edm.Date"/>
+        <Property Name="Cash_Terms" Type="Edm.Decimal" Precision="2"/>
+        <Property Name="Basis_Threshold" Type="Edm.Decimal" Precision="2"/>
+        <Property Name="Country_Key" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Auto_price_Indicator" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Futures_Month" Type="Edm.String" MaxLength="2"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_GROWLOC">
+        <Key>
+          <PropertyRef Name="Company_Code"/>
+          <PropertyRef Name="Crop_Year"/>
+          <PropertyRef Name="Plant"/>
+          <PropertyRef Name="Grow_Location"/>
+          <PropertyRef Name="Production_Season_ID"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Company_Code" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Crop_Year" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="Plant" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Grow_Location" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="Production_Season_ID" Type="Edm.String" MaxLength="2" Nullable="false"/>
+        <Property Name="Irrigation_flag" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Area_Base_Yield_Designated_Flag" Type="Edm.String" MaxLength="1"/>
+        <Property Name="GYI_Ranking_Group" Type="Edm.Int32"/>
+        <Property Name="Sign_Off" Type="Edm.String" MaxLength="1"/>
+        <Property Name="Estimated_CCE_Bushels_Acre" Type="Edm.Decimal" Precision="3"/>
+        <Property Name="Actual_CCE_Bushels_Acre" Type="Edm.Decimal" Precision="2"/>
+        <Property Name="Male_Compensation_for_Grower_Accounting" Type="Edm.Decimal" Precision="6"/>
+        <Property Name="Cost_Center" Type="Edm.String" MaxLength="10"/>
+        <Property Name="Grain_Discount" Type="Edm.Decimal" Precision="3"/>
+        <Property Name="Good_Planting_Window" Type="Edm.Date"/>
+        <Property Name="Best_Planting_Window" Type="Edm.Date"/>
+        <Property Name="Intermediate_Planting_Window" Type="Edm.Date"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_YPUGA_PRODSEAS">
+        <Key>
+          <PropertyRef Name="Language_Key"/>
+          <PropertyRef Name="Production_Season_ID"/>
+        </Key>
+        <Property Name="Client" Type="Edm.Int32"/>
+        <Property Name="Language_Key" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="Production_Season_ID" Type="Edm.String" MaxLength="2" Nullable="false"/>
+        <Property Name="Production_Season_Description" Type="Edm.String" MaxLength="35"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_T002">
+        <Key>
+          <PropertyRef Name="Language_Key"/>
+        </Key>
+        <Property Name="Language_Key" Type="Edm.String" MaxLength="2" Nullable="false"/>
+        <Property Name="Language_specifications" Type="Edm.String" MaxLength="1"/>
+      </EntityType>
+      <EntityType Name="ZBYCS_S2P_C_ROLE">
+        <Key>
+          <PropertyRef Name="Role"/>
+        </Key>
+        <Property Name="Role" Type="Edm.String" MaxLength="1" Nullable="false"/>
+        <Property Name="Role_Description" Type="Edm.String" MaxLength="20"/>
+      </EntityType>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_T001">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_TCURC">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_FIELD">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_T001W">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_LFA1">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_T005E">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_T005">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_T005s">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_YGREL">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_T005G">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_T5V01">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_CONT_TYPE">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_SEASON_YR">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_GROWLOC_LK">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_VARIETY">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_MARA">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_VAR_REGION">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_CLR_RATE">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_ZPLANT">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_YPAT_CNTR">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_YMM_GUIXT_PARMS">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_EXCHPRICE">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_ELEV_PRICE">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_SPECIE">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_PRICE_ALT">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_GROWLOC">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+      <Annotations Target="CatalogService.EntityContainer/ZBYCS_S2P_C_YPUGA_PRODSEAS">
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record Type="Capabilities.DeleteRestrictionsType">
+            <PropertyValue Property="Deletable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record Type="Capabilities.InsertRestrictionsType">
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record Type="Capabilities.UpdateRestrictionsType">
+            <PropertyValue Property="Updatable" Bool="false"/>
+          </Record>
+        </Annotation>
+      </Annotations>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
