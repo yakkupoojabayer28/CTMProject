@@ -1,0 +1,104 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <VBox>
+        <Dialog
+            title="Material Selection"
+            contentWidth="550px"
+            contentHeight="400px"
+        >
+            <OverflowToolbar>
+                <SearchField
+                    search="onMaterialSearchLiveChange"
+                    liveChange="onMaterialSearchLiveChange"
+                    width="250px"
+                    placeholder="Search Material"
+                >
+                    <customData>
+                        <core:CustomData
+                            key="column1"
+                            value="material"
+                        />
+                        <core:CustomData
+                            key="column2"
+                            value="material_short_Desc"
+                        />
+                    </customData>
+                </SearchField>
+                <SearchField
+                    search="onMaterialSearchLiveChange"
+                    liveChange="onMaterialSearchLiveChange"
+                    width="250px"
+                    placeholder="Search Description"
+                >
+                    <customData>
+                        <core:CustomData
+                            key="column1"
+                            value="material"
+                        />
+                        <core:CustomData
+                            key="column2"
+                            value="material_short_Desc"
+                        />
+                    </customData>
+                </SearchField>
+            </OverflowToolbar>
+            <Table
+                items="{path: 'ContractModel>/ZBYGL_S2P_C_Material', parameters: {arrayNames:['items'], countMode:'Inline'}, sorter: {path: 'material'}}"
+                mode="SingleSelectLeft"
+                itemPress="onMaterialItemPress"
+            >
+                <items>
+                    <ColumnListItem
+                        type="Active"
+                        press="onMaterialItemPress"
+                    >
+                        <cells>
+                            <Text text="{ContractModel>material}" />
+                            <Text text="{ContractModel>material_short_Desc}" />
+                            <Text text="{ContractModel>UOM}" />
+                            <Text text="{ContractModel>material_group}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+                <columns>
+                    <Column width="100px">
+                        <header>
+                            <Label text="Material" />
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Material Description" />
+                        </header>
+                    </Column>
+                    <Column width="100px">
+                        <header>
+                            <Label text="UoM" />
+                        </header>
+                    </Column>
+                    <Column
+                        width="100px"
+                        visible="false"
+                    >
+                        <header>
+                            <Label text="Material Group" />
+                        </header>
+                    </Column>
+                </columns>
+            </Table>
+            <buttons>
+                <Button
+                    text="OK"
+                    press="onMaterialSaveDialog"
+                    type="Emphasized"
+                />
+                <Button
+                    text="Close"
+                    press="onCloseDialog"
+                />
+            </buttons>
+        </Dialog>
+    </VBox>
+</core:FragmentDefinition>

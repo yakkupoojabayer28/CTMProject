@@ -1,0 +1,4081 @@
+{
+  "namespace": "data.customer",
+  "definitions": {
+    "data.customer.ZBYCS_S2P_C_T001": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Company_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Name_of_Company_Code_or_Company": {
+          "type": "cds.String",
+          "length": 25
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_TCURC": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Currency_Key": {
+          "key": true,
+          "type": "cds.String",
+          "length": 5
+        },
+        "ISO_currency_code": {
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_FIELD": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Field_Number": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Account_Number_of_Vendor_or_Creditor": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Growing_Location": {
+          "type": "cds.Integer"
+        },
+        "Est_Total_Field_Acres": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Field_Unit_of_Measure": {
+          "type": "cds.Integer"
+        },
+        "Irrigation_flag": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "County_Code": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Township_Code": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "Township_Range_Code": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Field_section": {
+          "type": "cds.Integer"
+        },
+        "Field_Quarter": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "Common_Name": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "Region_State_Province_County": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Country_Key": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Miles_from_the_Field_to_the_Plant": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "GPS_Coordinate_1": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "GPS_Coordinate_2": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "GPS_Coordinate_3": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "GPS_Coordinate_4": {
+          "type": "cds.String",
+          "length": 15
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_T001W": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Name": {
+          "type": "cds.String",
+          "length": 30
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_LFA1": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Account_Number_of_Vendor_or_Creditor": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_T006A": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Language_Key": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Unit_of_Measurement": {
+          "key": true,
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_T005E": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Country_Key": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Region": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "County_Code": {
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_T005": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Country_Key": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_T005S": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Country_Key": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "Region": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_YGREL": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Elevator_Code": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Plant": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Name": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "Elevator_Address": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "City": {
+          "type": "cds.String",
+          "length": 25
+        },
+        "Region": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Postal_Code": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "First_telephone_number": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "Elevator_Contact": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "Active_Record_Flag": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Country_Key": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Agriculture_Commodity_Exchange": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_T005G": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Country_Key": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "Region": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "City_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_T5V01": {
+      "kind": "entity",
+      "elements": {
+        "Postal_code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "City": {
+          "type": "cds.String",
+          "length": 30
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_CONT_TYPE": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Company_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Season_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Purchasing_Document_Type": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Specie": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CCE_Bushel_Area_Base_Yield": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Estimated_Price": {
+          "type": "cds.Integer"
+        },
+        "Currency_Key": {
+          "type": "cds.Integer"
+        },
+        "Complex_Seed_Stock_Pricing": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "BU_deduction_factor": {
+          "type": "cds.Decimal",
+          "precision": 4
+        },
+        "GYI_Variable_Bushels": {
+          "type": "cds.Integer"
+        },
+        "GYI_Max_Premium_Increase": {
+          "type": "cds.Integer"
+        },
+        "Hauling_Info_Relevant": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "GYI_Premium_Maximum": {
+          "type": "cds.Integer"
+        },
+        "GYI_Premium_Minimum": {
+          "type": "cds.Integer"
+        },
+        "GYI_Min_Premium_Increase": {
+          "type": "cds.Integer"
+        },
+        "GYI_Minimum": {
+          "type": "cds.Integer"
+        },
+        "GYI_Minimum_for_Single_Field_Contract": {
+          "type": "cds.Integer"
+        },
+        "GYI_Maximum": {
+          "type": "cds.Integer"
+        },
+        "Factor_Flag": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Guaranteed_Yield_Acre": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "MPCI": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Moisture_Deduction_Factor": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Priced_By_Percent": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Price_Basis_Range": {
+          "type": "cds.Decimal",
+          "precision": 6
+        },
+        "Price_Method": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Grower_Charged_for_Seed_Stock": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Standard_Moisture": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Contract_Designation": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Usage_Percentage": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "CCE_Calc": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CCE_Bushel_Grower_Index_Factor": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "County_Loan_Rate_Eligible": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Production_Order_Type": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Account_assignment_category": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Hedging_Relevant": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Pay_limit": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Single_Field_Contract_Type": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Indicates_the_contract_type_will_pay_based_on_HarvestBushels": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Flag_indicating_the_contract_type_is_valid_for_LDP_pricing": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CCE_for_Rotated_Acre_Increase": {
+          "type": "cds.Decimal",
+          "precision": 3
+        },
+        "Premium_Name": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Overall_Limit_Multiplier": {
+          "type": "cds.Integer"
+        },
+        "Auto_Pay_date": {
+          "type": "cds.Date"
+        },
+        "Default_Acres_Switch": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Percent_Target": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Initial_Payment_Percentage_for_WashingtonFoundation_Contract": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Percentage_for_Isolated_discard_acres_Washington_fnd_cntrt": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Actual_CCE_Bushels_Acre": {
+          "type": "cds.Decimal",
+          "precision": 3
+        },
+        "Tolerance_limit_on_payment_per_acre": {
+          "type": "cds.Decimal",
+          "precision": 7
+        },
+        "Isolation_Bushels": {
+          "type": "cds.Integer"
+        },
+        "Check_to_Create_DS_Order": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Percent_of_LCCE_for_Discard_Acres": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Precommercial_Utilization_Increasing_Factor": {
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "Rotational_Area_Greater_than_Actual_Area": {
+          "type": "cds.String",
+          "length": 1
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_T161": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Purchasing_Document_Category": {
+          "key": true,
+          "type": "cds.String",
+          "length": 1
+        },
+        "Purchasing_Document_Type": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_SEASON_YR": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Specie": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Start_Date": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "End_Date": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "Season_Year": {
+          "type": "cds.Integer"
+        },
+        "First_Date_the_grower_can_price_contracts": {
+          "type": "cds.Date"
+        },
+        "Last_Date_the_user_can_price_contracts": {
+          "type": "cds.Date"
+        },
+        "Farmsource_End_date": {
+          "type": "cds.Date"
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_GROWLOC_LK": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Grow_Location": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Growing_Location_Name": {
+          "key": true,
+          "type": "cds.String",
+          "length": 30
+        },
+        "Geographical_Area_Direction": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Environment_code": {
+          "type": "cds.String",
+          "length": 5
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_VARIETY": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Company_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Season_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Production_Season_ID": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Plant": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Grow_Location": {
+          "type": "cds.Integer"
+        },
+        "Material_Number": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "Estimated_Yield_Target": {
+          "type": "cds.Integer"
+        },
+        "UOM_for_Yield_Fields": {
+          "type": "cds.Integer"
+        },
+        "Estimated_Yield_FNG": {
+          "type": "cds.Decimal",
+          "precision": 6
+        },
+        "Percent_of_Target": {
+          "type": "cds.Integer"
+        },
+        "Clean_Out_Percent": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Sorghum_Factor": {
+          "type": "cds.Decimal",
+          "precision": 7
+        },
+        "Warm_Germ_Target_Percent": {
+          "type": "cds.Integer"
+        },
+        "Cold_Germ_Target_Percent": {
+          "type": "cds.Integer"
+        },
+        "Seed_Stock_Tech_Fee": {
+          "type": "cds.Integer"
+        },
+        "Bin_Rank_Flag": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Seed_Stock_Standard_Price": {
+          "type": "cds.Integer"
+        },
+        "Seed_Stock_Option_Price": {
+          "type": "cds.Integer"
+        },
+        "Seed_Stock_Foundation_Price": {
+          "type": "cds.Integer"
+        },
+        "Currency_Key": {
+          "type": "cds.Integer"
+        },
+        "Screen_Size_for_Sorghum": {
+          "type": "cds.Decimal"
+        },
+        "Variety_Premium": {
+          "type": "cds.Integer"
+        },
+        "Planting_Instructions": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "Payment_Factor": {
+          "type": "cds.Decimal",
+          "precision": 4
+        },
+        "Planned_Dry_Shell": {
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_MARA": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Material_Number": {
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_VAR_REGION": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Company_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Season_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Purchasing_Document_Type": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Material_Number": {
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        },
+        "Variety_Premium": {
+          "type": "cds.Integer"
+        },
+        "BUYOUT_FEE": {
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_CLR_RATE": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Season_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Specie": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Country_Key": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "Region": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "County_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "Activity_Number": {
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        },
+        "County_Loan_Rate_MPCI_Percent": {
+          "key": true,
+          "type": "cds.Decimal",
+          "precision": 8
+        },
+        "Currency_Key": {
+          "key": true,
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_ZPLANT": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Purchasing_Group": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Purchasing_Organization": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Order_Type": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Tax_on_sales_purchases_code": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Incoterms": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Spool_default_printer": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Plant_Type": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Plant_Growing_Status": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Plant_Mthr": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Common_Plant_Name": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "Plant_Manager_Name": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "Load_Ticke_RFID_Layout": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Spool_RFI_printer": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_YPAT_CNTRL": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Country_Key": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Specie": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Parental_Flag": {
+          "key": true,
+          "type": "cds.String",
+          "length": 1
+        },
+        "Order_Type": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Account_assignment_category": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "General_settlement_receiver": {
+          "type": "cds.String",
+          "length": 35
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_YMM_GUIXT_PARMS": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Order_Type": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Specie_code_used_in_GuiXT_scripts": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Company_Code": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Purchasing_Organization": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Purchasing_Group": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Tax_on_sales_purchases_code": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Incoterms": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Confirmation_Control_Key": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Contract_Unit_of_Measure": {
+          "type": "cds.Integer"
+        },
+        "Contract_Area_UOM_Text": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "UOM_for_Yield_Fields": {
+          "type": "cds.Integer"
+        },
+        "Estimated_Yield_UOM_Text": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Tracking_Number_Switch": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Spool_Output_device": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Mother_Plant": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Indicate_when_to_bypass_the_target_qty_calculation": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Bypass_Grower_Splits_screen": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Indicator_for_displaying_Season_ID": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Indicator_for_displaying_Get_Batch": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Tax_Code_to_use_when_vendor_has_VAT": {
+          "type": "cds.String",
+          "length": 2
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_YVMMPU_EXCHPRICE": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Agriculture_Commodity_Exchange": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Specie": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Market_Date": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "Price_Month": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Price_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Market_Close_Price": {
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "Market_High_Price": {
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "Currency_Key": {
+          "type": "cds.Integer"
+        },
+        "Create_Dates": {
+          "type": "cds.Date"
+        },
+        "Creation_Time": {
+          "type": "cds.Time"
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_ELEV_PRICE": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Agriculture_Commodity_Exchange": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Specie": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Elevator_Code": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Elevator_Price_Type": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Price_Month": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Price_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Start_Date": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "Create_Dates": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "Creation_Time": {
+          "key": true,
+          "type": "cds.Time"
+        },
+        "End_Date": {
+          "type": "cds.Date"
+        },
+        "Price": {
+          "type": "cds.Decimal",
+          "precision": 8
+        },
+        "Currency_Key": {
+          "type": "cds.Integer"
+        },
+        "Created_By": {
+          "type": "cds.String",
+          "length": 12
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_SPECIE": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Specie": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Specie_Description": {
+          "type": "cds.String",
+          "length": 35
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_PRICE_ALT": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Season_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Season_ID": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Company_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Specie": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Price_Month": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Price_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "From_Market_Date": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "To_Market_Date": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "Requested_Check_Date": {
+          "type": "cds.Date"
+        },
+        "Cash_Terms": {
+          "type": "cds.Decimal",
+          "precision": 2
+        },
+        "Basis_Threshold": {
+          "type": "cds.Decimal",
+          "precision": 2
+        },
+        "Country_Key": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Auto_price_Indicator": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Futures_Month": {
+          "type": "cds.String",
+          "length": 2
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_FND_FACTOR": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Company_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Season_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Purchasing_Document_Type": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Acres_Range_Low": {
+          "key": true,
+          "type": "cds.Decimal",
+          "precision": 11
+        },
+        "Acres_Range_High": {
+          "type": "cds.Decimal",
+          "precision": 11
+        },
+        "Foundation_Factor": {
+          "type": "cds.Decimal",
+          "precision": 4
+        },
+        "Foundation_Rate": {
+          "type": "cds.Integer"
+        },
+        "Currency_Key": {
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_GROWLOC": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Company_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Crop_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Grow_Location": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Production_Season_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Irrigation_flag": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Area_Base_Yield_Designated_Flag": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "GYI_Ranking_Group": {
+          "type": "cds.Integer"
+        },
+        "Sign_Off": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Estimated_CCE_Bushels_Acre": {
+          "type": "cds.Decimal",
+          "precision": 3
+        },
+        "Actual_CCE_Bushels_Acre": {
+          "type": "cds.Decimal",
+          "precision": 2
+        },
+        "Male_Compensation_for_Grower_Accounting": {
+          "type": "cds.Decimal",
+          "precision": 6
+        },
+        "Cost_Center": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Grain_Discount": {
+          "type": "cds.Decimal",
+          "precision": 3
+        },
+        "Good_Planting_Window": {
+          "type": "cds.Date"
+        },
+        "Best_Planting_Window": {
+          "type": "cds.Date"
+        },
+        "Intermediate_Planting_Window": {
+          "type": "cds.Date"
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_YPUGA_PRODSEAS": {
+      "kind": "entity",
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Language_Key": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Production_Season_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Production_Season_Description": {
+          "type": "cds.String",
+          "length": 35
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_T002": {
+      "kind": "entity",
+      "elements": {
+        "Language_Key": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Language_specifications": {
+          "type": "cds.String",
+          "length": 1
+        }
+      }
+    },
+    "data.customer.ZBYCS_S2P_C_ROLE": {
+      "kind": "entity",
+      "elements": {
+        "Role": {
+          "key": true,
+          "type": "cds.String",
+          "length": 1
+        },
+        "Role_Description": {
+          "type": "cds.String",
+          "length": 20
+        }
+      }
+    },
+    "CatalogService": {
+      "@source": "srv/cat-service.cds",
+      "kind": "service"
+    },
+    "CatalogService.ZBYCS_S2P_C_T001": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_T001"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Company_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Name_of_Company_Code_or_Company": {
+          "type": "cds.String",
+          "length": 25
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_TCURC": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_TCURC"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Currency_Key": {
+          "key": true,
+          "type": "cds.String",
+          "length": 5
+        },
+        "ISO_currency_code": {
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_FIELD": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_FIELD"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Field_Number": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Account_Number_of_Vendor_or_Creditor": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Growing_Location": {
+          "type": "cds.Integer"
+        },
+        "Est_Total_Field_Acres": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Field_Unit_of_Measure": {
+          "type": "cds.Integer"
+        },
+        "Irrigation_flag": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "County_Code": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Township_Code": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "Township_Range_Code": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Field_section": {
+          "type": "cds.Integer"
+        },
+        "Field_Quarter": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "Common_Name": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "Region_State_Province_County": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Country_Key": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Miles_from_the_Field_to_the_Plant": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "GPS_Coordinate_1": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "GPS_Coordinate_2": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "GPS_Coordinate_3": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "GPS_Coordinate_4": {
+          "type": "cds.String",
+          "length": 15
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_T001W": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_T001W"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Name": {
+          "type": "cds.String",
+          "length": 30
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_LFA1": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_LFA1"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Account_Number_of_Vendor_or_Creditor": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_T005E": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_T005E"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Country_Key": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Region": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "County_Code": {
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_T005": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_T005"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Country_Key": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_T005s": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_T005S"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Country_Key": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "Region": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_YGREL": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_YGREL"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Elevator_Code": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Plant": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Name": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "Elevator_Address": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "City": {
+          "type": "cds.String",
+          "length": 25
+        },
+        "Region": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Postal_Code": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "First_telephone_number": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "Elevator_Contact": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "Active_Record_Flag": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Country_Key": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Agriculture_Commodity_Exchange": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_T005G": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_T005G"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Country_Key": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "Region": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "City_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_T5V01": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_T5V01"
+          ]
+        }
+      },
+      "elements": {
+        "Postal_code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "City": {
+          "type": "cds.String",
+          "length": 30
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_CONT_TYPE": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_CONT_TYPE"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Company_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Season_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Purchasing_Document_Type": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Specie": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CCE_Bushel_Area_Base_Yield": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Estimated_Price": {
+          "type": "cds.Integer"
+        },
+        "Currency_Key": {
+          "type": "cds.Integer"
+        },
+        "Complex_Seed_Stock_Pricing": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "BU_deduction_factor": {
+          "type": "cds.Decimal",
+          "precision": 4
+        },
+        "GYI_Variable_Bushels": {
+          "type": "cds.Integer"
+        },
+        "GYI_Max_Premium_Increase": {
+          "type": "cds.Integer"
+        },
+        "Hauling_Info_Relevant": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "GYI_Premium_Maximum": {
+          "type": "cds.Integer"
+        },
+        "GYI_Premium_Minimum": {
+          "type": "cds.Integer"
+        },
+        "GYI_Min_Premium_Increase": {
+          "type": "cds.Integer"
+        },
+        "GYI_Minimum": {
+          "type": "cds.Integer"
+        },
+        "GYI_Minimum_for_Single_Field_Contract": {
+          "type": "cds.Integer"
+        },
+        "GYI_Maximum": {
+          "type": "cds.Integer"
+        },
+        "Factor_Flag": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Guaranteed_Yield_Acre": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "MPCI": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Moisture_Deduction_Factor": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Priced_By_Percent": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Price_Basis_Range": {
+          "type": "cds.Decimal",
+          "precision": 6
+        },
+        "Price_Method": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Grower_Charged_for_Seed_Stock": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Standard_Moisture": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Contract_Designation": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Usage_Percentage": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "CCE_Calc": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CCE_Bushel_Grower_Index_Factor": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "County_Loan_Rate_Eligible": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Production_Order_Type": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Account_assignment_category": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Hedging_Relevant": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Pay_limit": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Single_Field_Contract_Type": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Indicates_the_contract_type_will_pay_based_on_HarvestBushels": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Flag_indicating_the_contract_type_is_valid_for_LDP_pricing": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CCE_for_Rotated_Acre_Increase": {
+          "type": "cds.Decimal",
+          "precision": 3
+        },
+        "Premium_Name": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Overall_Limit_Multiplier": {
+          "type": "cds.Integer"
+        },
+        "Auto_Pay_date": {
+          "type": "cds.Date"
+        },
+        "Default_Acres_Switch": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Percent_Target": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Initial_Payment_Percentage_for_WashingtonFoundation_Contract": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Percentage_for_Isolated_discard_acres_Washington_fnd_cntrt": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Actual_CCE_Bushels_Acre": {
+          "type": "cds.Decimal",
+          "precision": 3
+        },
+        "Tolerance_limit_on_payment_per_acre": {
+          "type": "cds.Decimal",
+          "precision": 7
+        },
+        "Isolation_Bushels": {
+          "type": "cds.Integer"
+        },
+        "Check_to_Create_DS_Order": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Percent_of_LCCE_for_Discard_Acres": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Precommercial_Utilization_Increasing_Factor": {
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "Rotational_Area_Greater_than_Actual_Area": {
+          "type": "cds.String",
+          "length": 1
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_T161": {
+      "kind": "entity",
+      "@redonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_T161"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Purchasing_Document_Category": {
+          "key": true,
+          "type": "cds.String",
+          "length": 1
+        },
+        "Purchasing_Document_Type": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_SEASON_YR": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_SEASON_YR"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Specie": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Start_Date": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "End_Date": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "Season_Year": {
+          "type": "cds.Integer"
+        },
+        "First_Date_the_grower_can_price_contracts": {
+          "type": "cds.Date"
+        },
+        "Last_Date_the_user_can_price_contracts": {
+          "type": "cds.Date"
+        },
+        "Farmsource_End_date": {
+          "type": "cds.Date"
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_GROWLOC_LK": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_GROWLOC_LK"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Grow_Location": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Growing_Location_Name": {
+          "key": true,
+          "type": "cds.String",
+          "length": 30
+        },
+        "Geographical_Area_Direction": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Environment_code": {
+          "type": "cds.String",
+          "length": 5
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_VARIETY": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_VARIETY"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Company_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Season_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Production_Season_ID": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Plant": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Grow_Location": {
+          "type": "cds.Integer"
+        },
+        "Material_Number": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "Estimated_Yield_Target": {
+          "type": "cds.Integer"
+        },
+        "UOM_for_Yield_Fields": {
+          "type": "cds.Integer"
+        },
+        "Estimated_Yield_FNG": {
+          "type": "cds.Decimal",
+          "precision": 6
+        },
+        "Percent_of_Target": {
+          "type": "cds.Integer"
+        },
+        "Clean_Out_Percent": {
+          "type": "cds.Decimal",
+          "precision": 5
+        },
+        "Sorghum_Factor": {
+          "type": "cds.Decimal",
+          "precision": 7
+        },
+        "Warm_Germ_Target_Percent": {
+          "type": "cds.Integer"
+        },
+        "Cold_Germ_Target_Percent": {
+          "type": "cds.Integer"
+        },
+        "Seed_Stock_Tech_Fee": {
+          "type": "cds.Integer"
+        },
+        "Bin_Rank_Flag": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Seed_Stock_Standard_Price": {
+          "type": "cds.Integer"
+        },
+        "Seed_Stock_Option_Price": {
+          "type": "cds.Integer"
+        },
+        "Seed_Stock_Foundation_Price": {
+          "type": "cds.Integer"
+        },
+        "Currency_Key": {
+          "type": "cds.Integer"
+        },
+        "Screen_Size_for_Sorghum": {
+          "type": "cds.Decimal"
+        },
+        "Variety_Premium": {
+          "type": "cds.Integer"
+        },
+        "Planting_Instructions": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "Payment_Factor": {
+          "type": "cds.Decimal",
+          "precision": 4
+        },
+        "Planned_Dry_Shell": {
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_MARA": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_MARA"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Material_Number": {
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_VAR_REGION": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_VAR_REGION"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Company_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Season_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Purchasing_Document_Type": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Material_Number": {
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        },
+        "Variety_Premium": {
+          "type": "cds.Integer"
+        },
+        "BUYOUT_FEE": {
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_CLR_RATE": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_CLR_RATE"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Season_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Specie": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Country_Key": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "Region": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "County_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "Activity_Number": {
+          "key": true,
+          "type": "cds.String",
+          "length": 18
+        },
+        "County_Loan_Rate_MPCI_Percent": {
+          "key": true,
+          "type": "cds.Decimal",
+          "precision": 8
+        },
+        "Currency_Key": {
+          "key": true,
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_ZPLANT": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_ZPLANT"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Purchasing_Group": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Purchasing_Organization": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Order_Type": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Tax_on_sales_purchases_code": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Incoterms": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Spool_default_printer": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Plant_Type": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Plant_Growing_Status": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Plant_Mthr": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Common_Plant_Name": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "Plant_Manager_Name": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "Load_Ticke_RFID_Layout": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Spool_RFI_printer": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_YPAT_CNTR": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_YPAT_CNTRL"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Country_Key": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Specie": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Parental_Flag": {
+          "key": true,
+          "type": "cds.String",
+          "length": 1
+        },
+        "Order_Type": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Account_assignment_category": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "General_settlement_receiver": {
+          "type": "cds.String",
+          "length": 35
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_YMM_GUIXT_PARMS": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_YMM_GUIXT_PARMS"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Order_Type": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Specie_code_used_in_GuiXT_scripts": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Company_Code": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Purchasing_Organization": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Purchasing_Group": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Tax_on_sales_purchases_code": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Incoterms": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Confirmation_Control_Key": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Contract_Unit_of_Measure": {
+          "type": "cds.Integer"
+        },
+        "Contract_Area_UOM_Text": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "UOM_for_Yield_Fields": {
+          "type": "cds.Integer"
+        },
+        "Estimated_Yield_UOM_Text": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Tracking_Number_Switch": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Spool_Output_device": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Mother_Plant": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Indicate_when_to_bypass_the_target_qty_calculation": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Bypass_Grower_Splits_screen": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Indicator_for_displaying_Season_ID": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Indicator_for_displaying_Get_Batch": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Tax_Code_to_use_when_vendor_has_VAT": {
+          "type": "cds.String",
+          "length": 2
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_EXCHPRICE": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_YVMMPU_EXCHPRICE"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Agriculture_Commodity_Exchange": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Specie": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Market_Date": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "Price_Month": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Price_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Market_Close_Price": {
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "Market_High_Price": {
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "Currency_Key": {
+          "type": "cds.Integer"
+        },
+        "Create_Dates": {
+          "type": "cds.Date"
+        },
+        "Creation_Time": {
+          "type": "cds.Time"
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_ELEV_PRICE": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_ELEV_PRICE"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Agriculture_Commodity_Exchange": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Specie": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Elevator_Code": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Elevator_Price_Type": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Price_Month": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Price_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Start_Date": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "Create_Dates": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "Creation_Time": {
+          "key": true,
+          "type": "cds.Time"
+        },
+        "End_Date": {
+          "type": "cds.Date"
+        },
+        "Price": {
+          "type": "cds.Decimal",
+          "precision": 8
+        },
+        "Currency_Key": {
+          "type": "cds.Integer"
+        },
+        "Created_By": {
+          "type": "cds.String",
+          "length": 12
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_SPECIE": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_SPECIE"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Specie": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Specie_Description": {
+          "type": "cds.String",
+          "length": 35
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_PRICE_ALT": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_PRICE_ALT"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Season_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Season_ID": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Company_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Specie": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Price_Month": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Price_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "From_Market_Date": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "To_Market_Date": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "Requested_Check_Date": {
+          "type": "cds.Date"
+        },
+        "Cash_Terms": {
+          "type": "cds.Decimal",
+          "precision": 2
+        },
+        "Basis_Threshold": {
+          "type": "cds.Decimal",
+          "precision": 2
+        },
+        "Country_Key": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Auto_price_Indicator": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Futures_Month": {
+          "type": "cds.String",
+          "length": 2
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_GROWLOC": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_GROWLOC"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Company_Code": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Crop_Year": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Grow_Location": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Production_Season_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Irrigation_flag": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Area_Base_Yield_Designated_Flag": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "GYI_Ranking_Group": {
+          "type": "cds.Integer"
+        },
+        "Sign_Off": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Estimated_CCE_Bushels_Acre": {
+          "type": "cds.Decimal",
+          "precision": 3
+        },
+        "Actual_CCE_Bushels_Acre": {
+          "type": "cds.Decimal",
+          "precision": 2
+        },
+        "Male_Compensation_for_Grower_Accounting": {
+          "type": "cds.Decimal",
+          "precision": 6
+        },
+        "Cost_Center": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Grain_Discount": {
+          "type": "cds.Decimal",
+          "precision": 3
+        },
+        "Good_Planting_Window": {
+          "type": "cds.Date"
+        },
+        "Best_Planting_Window": {
+          "type": "cds.Date"
+        },
+        "Intermediate_Planting_Window": {
+          "type": "cds.Date"
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_YPUGA_PRODSEAS": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_YPUGA_PRODSEAS"
+          ]
+        }
+      },
+      "elements": {
+        "Client": {
+          "type": "cds.Integer"
+        },
+        "Language_Key": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Production_Season_ID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Production_Season_Description": {
+          "type": "cds.String",
+          "length": 35
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_T002": {
+      "kind": "entity",
+      "@readony": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_T002"
+          ]
+        }
+      },
+      "elements": {
+        "Language_Key": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Language_specifications": {
+          "type": "cds.String",
+          "length": 1
+        }
+      }
+    },
+    "CatalogService.ZBYCS_S2P_C_ROLE": {
+      "kind": "entity",
+      "@readony": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "data.customer.ZBYCS_S2P_C_ROLE"
+          ]
+        }
+      },
+      "elements": {
+        "Role": {
+          "key": true,
+          "type": "cds.String",
+          "length": 1
+        },
+        "Role_Description": {
+          "type": "cds.String",
+          "length": 20
+        }
+      }
+    },
+    "metadata": {
+      "@source": "srv/external/metadata.csn",
+      "kind": "service",
+      "@cds.external": "odata-v2",
+      "@m.IsDefaultEntityContainer": "true",
+      "@sap.message.scope.supported": "true",
+      "@sap.supported.formats": "atom json xlsx pdf"
+    },
+    "metadata.YYMPU_C_EKKO": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.content.version": "1",
+      "@sap.deletable.path": "Delete_mc",
+      "@sap.updatable.path": "Update_mc",
+      "@sap.label": "Projection view for header",
+      "elements": {
+        "Contract": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purchasing Document",
+          "@sap.quickinfo": "Purchasing Document Number",
+          "@sap.value.list": "standard",
+          "key": true,
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true
+        },
+        "Delete_mc": {
+          "@sap.label": "Dyn. Method Control",
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.Boolean"
+        },
+        "Update_mc": {
+          "@sap.label": "Dyn. Method Control",
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.Boolean"
+        },
+        "to_EKPO_oc": {
+          "@sap.label": "Dynamic CbA-Control",
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.Boolean"
+        },
+        "company_code": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Company Code",
+          "@sap.value.list": "standard",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Document_Category": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purch. Doc. Category",
+          "@sap.quickinfo": "Purchasing Document Category",
+          "type": "cds.String",
+          "length": 1
+        },
+        "create_date": {
+          "@sap.display.format": "Date",
+          "@sap.label": "Created On",
+          "@sap.quickinfo": "Creation Date of Purchasing Document",
+          "type": "cds.Date"
+        },
+        "Document_Type": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purchasing Doc. Type",
+          "@sap.quickinfo": "Purchasing Document Type",
+          "@sap.value.list": "standard",
+          "type": "cds.String",
+          "length": 4
+        },
+        "vendor": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Supplier",
+          "@sap.quickinfo": "Vendor's account number",
+          "@sap.value.list": "standard",
+          "type": "cds.String",
+          "length": 10
+        },
+        "Purchase_org": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purch. Organization",
+          "@sap.quickinfo": "Purchasing Organization",
+          "@sap.value.list": "standard",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Purchase_group": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purchasing Group",
+          "type": "cds.String",
+          "length": 3
+        },
+        "Currency": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Currency",
+          "@sap.quickinfo": "Currency Key",
+          "@sap.semantics": "currency-code",
+          "type": "cds.String",
+          "length": 5
+        },
+        "validity_start_d": {
+          "@sap.display.format": "Date",
+          "@sap.label": "Validity Per. Start",
+          "@sap.quickinfo": "Start of Validity Period",
+          "type": "cds.Date"
+        },
+        "validity_end_d": {
+          "@sap.display.format": "Date",
+          "@sap.label": "Validity Period End",
+          "@sap.quickinfo": "End of Validity Period",
+          "type": "cds.Date"
+        },
+        "to_EKPO": {
+          "@cds.ambiguous": "missing on condition?",
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "metadata.YYMPU_C_EKPO",
+          "on": [
+            {
+              "ref": [
+                "to_EKPO",
+                "Contract"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "Contract"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "metadata.YYMPU_C_EKPO": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.content.version": "1",
+      "@sap.deletable.path": "Delete_mc",
+      "@sap.updatable.path": "Update_mc",
+      "@sap.label": "Projection view for item contract",
+      "elements": {
+        "Contract": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purchasing Document",
+          "@sap.quickinfo": "Purchasing Document Number",
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "key": true,
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true
+        },
+        "Contract_Item": {
+          "@sap.display.format": "NonNegative",
+          "@sap.label": "Item",
+          "@sap.quickinfo": "Item Number of Purchasing Document",
+          "key": true,
+          "type": "cds.String",
+          "length": 5,
+          "notNull": true
+        },
+        "Delete_mc": {
+          "@sap.label": "Dyn. Method Control",
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.Boolean"
+        },
+        "Update_mc": {
+          "@sap.label": "Dyn. Method Control",
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.Boolean"
+        },
+        "company_code": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Company Code",
+          "@sap.value.list": "standard",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Document_Type": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purchasing Doc. Type",
+          "@sap.quickinfo": "Purchasing Document Type",
+          "@sap.value.list": "standard",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Document_Category": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purch. Doc. Category",
+          "@sap.quickinfo": "Purchasing Document Category",
+          "type": "cds.String",
+          "length": 1
+        },
+        "create_date": {
+          "@sap.display.format": "Date",
+          "@sap.label": "Created On",
+          "@sap.quickinfo": "Creation Date of Purchasing Document",
+          "type": "cds.Date"
+        },
+        "vendor": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Supplier",
+          "@sap.quickinfo": "Vendor's account number",
+          "@sap.value.list": "standard",
+          "type": "cds.String",
+          "length": 10
+        },
+        "Purchase_org": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purch. Organization",
+          "@sap.quickinfo": "Purchasing Organization",
+          "@sap.value.list": "standard",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Purchase_group": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purchasing Group",
+          "type": "cds.String",
+          "length": 3
+        },
+        "validity_start_d": {
+          "@sap.display.format": "Date",
+          "@sap.label": "Validity Per. Start",
+          "@sap.quickinfo": "Start of Validity Period",
+          "type": "cds.Date"
+        },
+        "validity_end_d": {
+          "@sap.display.format": "Date",
+          "@sap.label": "Validity Period End",
+          "@sap.quickinfo": "End of Validity Period",
+          "type": "cds.Date"
+        },
+        "Material": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Material",
+          "@sap.quickinfo": "Material Number",
+          "@sap.value.list": "standard",
+          "type": "cds.String",
+          "length": 18
+        },
+        "Plant": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Plant",
+          "@sap.value.list": "standard",
+          "type": "cds.String",
+          "length": 4
+        },
+        "material_desc": {
+          "@sap.label": "Short Text",
+          "type": "cds.String",
+          "length": 40
+        },
+        "Target_unit": {
+          "@sap.label": "Order Unit",
+          "@sap.quickinfo": "Purchase Order Unit of Measure",
+          "@sap.semantics": "unit-of-measure",
+          "type": "cds.String",
+          "length": 3
+        },
+        "Target_qty": {
+          "@sap.unit": "Target_unit",
+          "@sap.label": "Target Quantity",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "Currency": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Currency",
+          "@sap.quickinfo": "Currency Key",
+          "@sap.semantics": "currency-code",
+          "type": "cds.String",
+          "length": 5
+        },
+        "Netprice": {
+          "@sap.unit": "Currency",
+          "@sap.variable.scale": "true",
+          "@sap.label": "Net Order Price",
+          "@sap.quickinfo": "Net Price in Purchasing Document (in Document Currency)",
+          "type": "cds.Decimal",
+          "precision": 11,
+          "scale": 3
+        },
+        "Price_unit": {
+          "@sap.label": "Price unit",
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 0
+        },
+        "to_EKKO": {
+          "@cds.ambiguous": "missing on condition?",
+          "type": "cds.Association",
+          "target": "metadata.YYMPU_C_EKKO",
+          "on": [
+            {
+              "ref": [
+                "to_EKKO",
+                "Contract"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "Contract"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "metadata.YYMPU_C_PLANT": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.label": "Plant F4 Help",
+      "@sap.value.list": "true",
+      "elements": {
+        "plant": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Plant",
+          "key": true,
+          "type": "cds.String",
+          "length": 4,
+          "notNull": true
+        },
+        "plant_name": {
+          "@sap.label": "Name 1",
+          "@sap.quickinfo": "Name",
+          "type": "cds.String",
+          "length": 30
+        }
+      }
+    },
+    "metadata.YYMPU_GM_F4_BUKRS": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.label": "Company code Search Help",
+      "@sap.value.list": "true",
+      "elements": {
+        "company_code": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Company Code",
+          "key": true,
+          "type": "cds.String",
+          "length": 4,
+          "notNull": true
+        },
+        "Company_code_name": {
+          "@sap.label": "Company Name",
+          "@sap.quickinfo": "Name of Company Code or Company",
+          "type": "cds.String",
+          "length": 25
+        },
+        "Country": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Country/Region Key",
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "metadata.YYMPU_GM_F4_Contracttyp": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.label": "Contract Type Search help",
+      "@sap.value.list": "true",
+      "elements": {
+        "Document_Type": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purchasing Doc. Type",
+          "@sap.quickinfo": "Purchasing Document Type",
+          "key": true,
+          "type": "cds.String",
+          "length": 4,
+          "notNull": true
+        },
+        "Document_Category": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purch. Doc. Category",
+          "@sap.quickinfo": "Purchasing Document Category",
+          "type": "cds.String",
+          "length": 1
+        }
+      }
+    },
+    "metadata.YYMPU_GM_PGROUP": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.label": "F4 Help for Purchase Group",
+      "@sap.value.list": "true",
+      "elements": {
+        "Purchase_Org": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purch. Organization",
+          "@sap.quickinfo": "Purchasing Organization",
+          "key": true,
+          "type": "cds.String",
+          "length": 4,
+          "notNull": true
+        },
+        "Purchase_Org_desc": {
+          "@sap.label": "Description",
+          "@sap.quickinfo": "Description of purchasing organization",
+          "type": "cds.String",
+          "length": 20
+        },
+        "company_code": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Company Code",
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "metadata.YYMPU_GM_Vendor_f4": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.label": "Search help for Vendor",
+      "@sap.value.list": "true",
+      "elements": {
+        "vendor": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Supplier",
+          "@sap.quickinfo": "Account Number of Supplier",
+          "key": true,
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true
+        },
+        "Name": {
+          "@sap.label": "Name",
+          "@sap.quickinfo": "Name 1",
+          "type": "cds.String",
+          "length": 35
+        },
+        "Country": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Country/Region Key",
+          "type": "cds.String",
+          "length": 3
+        },
+        "City": {
+          "@sap.label": "City",
+          "type": "cds.String",
+          "length": 35
+        },
+        "Postal_code": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Postal Code",
+          "type": "cds.String",
+          "length": 10
+        }
+      }
+    },
+    "metadata.ZBYGL_S2P_C_Contract": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.label": "Search Help for Contract",
+      "@sap.value.list": "true",
+      "elements": {
+        "Contract": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purchasing Document",
+          "@sap.quickinfo": "Purchasing Document Number",
+          "key": true,
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true
+        },
+        "company_code": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Company Code",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Document_Type": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purchasing Doc. Type",
+          "@sap.quickinfo": "Purchasing Document Type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Doc_Category": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Purch. Doc. Category",
+          "@sap.quickinfo": "Purchasing Document Category",
+          "type": "cds.String",
+          "length": 1
+        }
+      }
+    },
+    "metadata.ZBYGL_S2P_C_Material": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.label": "Service for Material Search help",
+      "@sap.value.list": "true",
+      "elements": {
+        "material": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Material",
+          "@sap.quickinfo": "Material Number",
+          "key": true,
+          "type": "cds.String",
+          "length": 18,
+          "notNull": true
+        },
+        "plant": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Plant",
+          "type": "cds.String",
+          "length": 4
+        },
+        "material_group": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Material Group",
+          "type": "cds.String",
+          "length": 9
+        },
+        "UOM": {
+          "@sap.label": "Base Unit of Measure",
+          "@sap.semantics": "unit-of-measure",
+          "type": "cds.String",
+          "length": 3
+        },
+        "material_short_Desc": {
+          "@sap.label": "Material Description",
+          "type": "cds.String",
+          "length": 40
+        }
+      }
+    },
+    "metadata.ZBYGL_S2P_C_MPS": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.content.version": "1",
+      "@sap.label": "GM entity for model product spec",
+      "elements": {
+        "ID": {
+          "@sap.label": "UUID",
+          "@sap.quickinfo": "Model Product Specification UUID",
+          "key": true,
+          "type": "cds.UUID",
+          "notNull": true
+        },
+        "contract_type": {
+          "@sap.label": "Name",
+          "@sap.quickinfo": "Name of Model Product Specification",
+          "type": "cds.String",
+          "length": 40
+        },
+        "service_material": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Material",
+          "@sap.quickinfo": "Material Number",
+          "type": "cds.String",
+          "length": 18
+        },
+        "service_material_desc": {
+          "@sap.label": "Description",
+          "@sap.quickinfo": "Item Description of Model Product Specification",
+          "type": "cds.String",
+          "length": 40
+        },
+        "plant": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Plant",
+          "type": "cds.String",
+          "length": 4
+        },
+        "MATERIAL_GROUP": {
+          "@sap.display.format": "UpperCase",
+          "@sap.label": "Material Group",
+          "type": "cds.String",
+          "length": 9
+        },
+        "ORDER_QUANTITY": {
+          "@sap.unit": "ORDER_QUANTITYUNIT",
+          "@sap.label": "Quantity",
+          "@sap.quickinfo": "Quantity of Model Product Specification Item",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "ORDER_QUANTITYUNIT": {
+          "@sap.label": "Quantity Unit",
+          "@sap.quickinfo": "Model Product Specification Item: Quantity Unit",
+          "@sap.semantics": "unit-of-measure",
+          "type": "cds.String",
+          "length": 3
+        }
+      }
+    },
+    "metadata.SAP__Currencies": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.content.version": "1",
+      "elements": {
+        "CurrencyCode": {
+          "@sap.label": "Currency",
+          "@sap.semantics": "currency-code",
+          "key": true,
+          "type": "cds.String",
+          "length": 5,
+          "notNull": true
+        },
+        "ISOCode": {
+          "@sap.label": "ISO code",
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true
+        },
+        "Text": {
+          "@sap.label": "Short text",
+          "type": "cds.String",
+          "length": 15,
+          "notNull": true
+        },
+        "DecimalPlaces": {
+          "@odata.Type": "Edm.Byte",
+          "@sap.label": "Decimals",
+          "type": "cds.Integer",
+          "notNull": true
+        }
+      }
+    },
+    "metadata.SAP__UnitsOfMeasure": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.content.version": "1",
+      "elements": {
+        "UnitCode": {
+          "@sap.label": "Internal UoM",
+          "@sap.semantics": "unit-of-measure",
+          "key": true,
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true
+        },
+        "ISOCode": {
+          "@sap.label": "ISO Code",
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true
+        },
+        "ExternalCode": {
+          "@sap.label": "Commercial",
+          "type": "cds.String",
+          "length": 3,
+          "notNull": true
+        },
+        "Text": {
+          "@sap.label": "Measurement Unit Txt",
+          "type": "cds.String",
+          "length": 30,
+          "notNull": true
+        },
+        "DecimalPlaces": {
+          "@sap.label": "Decimal Places",
+          "type": "cds.Integer"
+        }
+      }
+    },
+    "metadata.SAP__MyDocumentDescriptions": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.content.version": "1",
+      "elements": {
+        "Id": {
+          "@sap.label": "UUID",
+          "key": true,
+          "type": "cds.UUID",
+          "notNull": true
+        },
+        "CreatedBy": {
+          "type": "cds.String",
+          "length": 12,
+          "notNull": true
+        },
+        "CreatedAt": {
+          "@odata.Type": "Edm.DateTime",
+          "@sap.label": "Time Stamp",
+          "type": "cds.DateTime",
+          "notNull": true
+        },
+        "FileName": {
+          "type": "cds.String",
+          "length": 256,
+          "notNull": true
+        },
+        "Title": {
+          "type": "cds.String",
+          "length": 256,
+          "notNull": true
+        },
+        "Format": {
+          "@cds.ambiguous": "missing on condition?",
+          "type": "cds.Association",
+          "target": "metadata.SAP__FormatSet",
+          "on": [
+            {
+              "ref": [
+                "Format",
+                "Id"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "Id"
+              ]
+            }
+          ]
+        },
+        "TableColumns": {
+          "@cds.ambiguous": "missing on condition?",
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "metadata.SAP__TableColumnsSet",
+          "on": [
+            {
+              "ref": [
+                "TableColumns",
+                "Id"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "Id"
+              ]
+            }
+          ]
+        },
+        "CoverPage": {
+          "@cds.ambiguous": "missing on condition?",
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "metadata.SAP__CoverPageSet",
+          "on": [
+            {
+              "ref": [
+                "CoverPage",
+                "Id"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "Id"
+              ]
+            }
+          ]
+        },
+        "Signature": {
+          "@cds.ambiguous": "missing on condition?",
+          "type": "cds.Association",
+          "target": "metadata.SAP__SignatureSet",
+          "on": [
+            {
+              "ref": [
+                "Signature",
+                "Id"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "Id"
+              ]
+            }
+          ]
+        },
+        "PDFStandard": {
+          "@cds.ambiguous": "missing on condition?",
+          "type": "cds.Association",
+          "target": "metadata.SAP__PDFStandardSet",
+          "on": [
+            {
+              "ref": [
+                "PDFStandard",
+                "Id"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "Id"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "metadata.SAP__FormatSet": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.pageable": "false",
+      "@sap.addressable": "false",
+      "@sap.content.version": "1",
+      "elements": {
+        "Id": {
+          "@sap.label": "UUID",
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "key": true,
+          "type": "cds.UUID",
+          "notNull": true
+        },
+        "FitToPage": {
+          "type": "metadata.SAP__FitToPage",
+          "notNull": true
+        },
+        "FontSize": {
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.Integer",
+          "notNull": true
+        },
+        "Orientation": {
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true
+        },
+        "PaperSize": {
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true
+        },
+        "BorderSize": {
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.Integer",
+          "notNull": true
+        },
+        "MarginSize": {
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.Integer",
+          "notNull": true
+        },
+        "FontName": {
+          "@sap.label": "Font Name",
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.String",
+          "length": 255,
+          "notNull": true
+        }
+      }
+    },
+    "metadata.SAP__PDFStandardSet": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.pageable": "false",
+      "@sap.addressable": "false",
+      "@sap.content.version": "1",
+      "elements": {
+        "Id": {
+          "@sap.label": "UUID",
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "key": true,
+          "type": "cds.UUID",
+          "notNull": true
+        },
+        "UsePDFAConformance": {
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.Boolean",
+          "notNull": true
+        },
+        "DoEnableAccessibility": {
+          "@sap.label": "Indicator",
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.Boolean",
+          "notNull": true
+        }
+      }
+    },
+    "metadata.SAP__TableColumnsSet": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.pageable": "false",
+      "@sap.addressable": "false",
+      "@sap.content.version": "1",
+      "elements": {
+        "Id": {
+          "@sap.label": "UUID",
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "key": true,
+          "type": "cds.UUID",
+          "notNull": true
+        },
+        "Name": {
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "key": true,
+          "type": "cds.String",
+          "length": 256,
+          "notNull": true
+        },
+        "Header": {
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "key": true,
+          "type": "cds.String",
+          "length": 256,
+          "notNull": true
+        },
+        "HorizontalAlignment": {
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true
+        }
+      }
+    },
+    "metadata.SAP__CoverPageSet": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.pageable": "false",
+      "@sap.addressable": "false",
+      "@sap.content.version": "1",
+      "elements": {
+        "Title": {
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "key": true,
+          "type": "cds.String",
+          "length": 256,
+          "notNull": true
+        },
+        "Id": {
+          "@sap.label": "UUID",
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "key": true,
+          "type": "cds.UUID",
+          "notNull": true
+        },
+        "Name": {
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "key": true,
+          "type": "cds.String",
+          "length": 256,
+          "notNull": true
+        },
+        "Value": {
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.String",
+          "length": 256,
+          "notNull": true
+        }
+      }
+    },
+    "metadata.SAP__SignatureSet": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.creatable": "false",
+      "@sap.updatable": "false",
+      "@sap.deletable": "false",
+      "@sap.pageable": "false",
+      "@sap.addressable": "false",
+      "@sap.content.version": "1",
+      "elements": {
+        "Id": {
+          "@sap.label": "UUID",
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "key": true,
+          "type": "cds.UUID",
+          "notNull": true
+        },
+        "DoSign": {
+          "@sap.label": "Indicator",
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.Boolean",
+          "notNull": true
+        },
+        "Reason": {
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.String",
+          "length": 256,
+          "notNull": true
+        }
+      }
+    },
+    "metadata.SAP__ValueHelpSet": {
+      "kind": "entity",
+      "@cds.external": true,
+      "@cds.persistence.skip": true,
+      "@sap.content.version": "1",
+      "elements": {
+        "VALUEHELP": {
+          "key": true,
+          "type": "cds.LargeString",
+          "notNull": true
+        },
+        "FIELD_VALUE": {
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true
+        },
+        "DESCRIPTION": {
+          "type": "cds.LargeString"
+        }
+      }
+    },
+    "metadata.SAP__FitToPage": {
+      "kind": "type",
+      "@cds.external": true,
+      "elements": {
+        "ErrorRecoveryBehavior": {
+          "@sap.label": "Error behavior",
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.String",
+          "length": 8,
+          "notNull": true
+        },
+        "IsEnabled": {
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.Boolean",
+          "notNull": true
+        },
+        "MinimumFontSize": {
+          "@sap.creatable": "false",
+          "@sap.updatable": "false",
+          "@sap.sortable": "false",
+          "@sap.filterable": "false",
+          "type": "cds.Integer",
+          "notNull": true
+        }
+      }
+    }
+  },
+  "meta": {
+    "creator": "CDS Compiler v4.4.4",
+    "flavor": "inferred"
+  },
+  "$version": "2.0"
+}

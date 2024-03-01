@@ -1,0 +1,1182 @@
+{
+ "meta": {
+  "creator": "cds-dk 7.4.1"
+ },
+ "$version": "2.0",
+ "definitions": {
+  "ZBYGL_S2P_C_SB_CONTRACT": {
+   "kind": "service",
+   "@cds.external": true,
+   "@m.IsDefaultEntityContainer": "true",
+   "@sap.message.scope.supported": "true",
+   "@sap.supported.formats": "atom json xlsx pdf"
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.YYMPU_C_EKKO": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "@sap.deletable.path": "Delete_mc",
+   "@sap.updatable.path": "Update_mc",
+   "@sap.label": "Projection view for header",
+   "elements": {
+    "Contract": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purchasing Document",
+     "@sap.quickinfo": "Purchasing Document Number",
+     "@sap.value.list": "standard",
+     "notNull": true
+    },
+    "Delete_mc": {
+     "type": "cds.Boolean",
+     "@sap.label": "Dyn. Method Control",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false"
+    },
+    "Update_mc": {
+     "type": "cds.Boolean",
+     "@sap.label": "Dyn. Method Control",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false"
+    },
+    "to_EKPO_oc": {
+     "type": "cds.Boolean",
+     "@sap.label": "Dynamic CbA-Control",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false"
+    },
+    "company_code": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Company Code",
+     "@sap.value.list": "standard"
+    },
+    "Document_Category": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purch. Doc. Category",
+     "@sap.quickinfo": "Purchasing Document Category"
+    },
+    "create_date": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Created On",
+     "@sap.quickinfo": "Creation Date of Purchasing Document"
+    },
+    "Document_Type": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purchasing Doc. Type",
+     "@sap.quickinfo": "Purchasing Document Type",
+     "@sap.value.list": "standard"
+    },
+    "vendor": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Supplier",
+     "@sap.quickinfo": "Vendor's account number",
+     "@sap.value.list": "standard"
+    },
+    "Purchase_org": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purch. Organization",
+     "@sap.quickinfo": "Purchasing Organization",
+     "@sap.value.list": "standard"
+    },
+    "Purchase_group": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purchasing Group"
+    },
+    "Currency": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Currency",
+     "@sap.quickinfo": "Currency Key",
+     "@sap.semantics": "currency-code"
+    },
+    "validity_start_d": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Validity Per. Start",
+     "@sap.quickinfo": "Start of Validity Period"
+    },
+    "validity_end_d": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Validity Period End",
+     "@sap.quickinfo": "End of Validity Period"
+    },
+    "to_EKPO": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Composition",
+     "target": "ZBYGL_S2P_C_SB_CONTRACT.YYMPU_C_EKPO",
+     "cardinality": {
+      "max": "*"
+     },
+     "on": [
+      {
+       "ref": [
+        "to_EKPO",
+        "Contract"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "Contract"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.YYMPU_C_EKPO": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "@sap.deletable.path": "Delete_mc",
+   "@sap.updatable.path": "Update_mc",
+   "@sap.label": "Projection view for item contract",
+   "elements": {
+    "Contract": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purchasing Document",
+     "@sap.quickinfo": "Purchasing Document Number",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "notNull": true
+    },
+    "Contract_Item": {
+     "key": true,
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Item",
+     "@sap.quickinfo": "Item Number of Purchasing Document",
+     "notNull": true
+    },
+    "Delete_mc": {
+     "type": "cds.Boolean",
+     "@sap.label": "Dyn. Method Control",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false"
+    },
+    "Update_mc": {
+     "type": "cds.Boolean",
+     "@sap.label": "Dyn. Method Control",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false"
+    },
+    "company_code": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Company Code",
+     "@sap.value.list": "standard"
+    },
+    "Document_Type": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purchasing Doc. Type",
+     "@sap.quickinfo": "Purchasing Document Type",
+     "@sap.value.list": "standard"
+    },
+    "Document_Category": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purch. Doc. Category",
+     "@sap.quickinfo": "Purchasing Document Category"
+    },
+    "create_date": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Created On",
+     "@sap.quickinfo": "Creation Date of Purchasing Document"
+    },
+    "vendor": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Supplier",
+     "@sap.quickinfo": "Vendor's account number",
+     "@sap.value.list": "standard"
+    },
+    "Purchase_org": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purch. Organization",
+     "@sap.quickinfo": "Purchasing Organization",
+     "@sap.value.list": "standard"
+    },
+    "Purchase_group": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purchasing Group"
+    },
+    "validity_start_d": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Validity Per. Start",
+     "@sap.quickinfo": "Start of Validity Period"
+    },
+    "validity_end_d": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Validity Period End",
+     "@sap.quickinfo": "End of Validity Period"
+    },
+    "Material": {
+     "type": "cds.String",
+     "length": 18,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Material",
+     "@sap.quickinfo": "Material Number",
+     "@sap.value.list": "standard"
+    },
+    "Plant": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant",
+     "@sap.value.list": "standard"
+    },
+    "material_desc": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Short Text"
+    },
+    "Target_unit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Order Unit",
+     "@sap.quickinfo": "Purchase Order Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "Target_qty": {
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "@sap.unit": "Target_unit",
+     "@sap.label": "Target Quantity"
+    },
+    "Currency": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Currency",
+     "@sap.quickinfo": "Currency Key",
+     "@sap.semantics": "currency-code"
+    },
+    "Netprice": {
+     "type": "cds.Decimal",
+     "precision": 11,
+     "scale": 3,
+     "@sap.unit": "Currency",
+     "@sap.variable.scale": "true",
+     "@sap.label": "Net Order Price",
+     "@sap.quickinfo": "Net Price in Purchasing Document (in Document Currency)"
+    },
+    "Price_unit": {
+     "type": "cds.Decimal",
+     "precision": 5,
+     "scale": 0,
+     "@sap.label": "Price unit"
+    },
+    "to_EKKO": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "ZBYGL_S2P_C_SB_CONTRACT.YYMPU_C_EKKO",
+     "on": [
+      {
+       "ref": [
+        "to_EKKO",
+        "Contract"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "Contract"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.YYMPU_C_PLANT": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Plant F4 Help",
+   "@sap.value.list": "true",
+   "elements": {
+    "plant": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant",
+     "notNull": true
+    },
+    "plant_name": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.label": "Name 1",
+     "@sap.quickinfo": "Name"
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.YYMPU_GM_F4_BUKRS": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Company code Search Help",
+   "@sap.value.list": "true",
+   "elements": {
+    "company_code": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Company Code",
+     "notNull": true
+    },
+    "Company_code_name": {
+     "type": "cds.String",
+     "length": 25,
+     "@sap.label": "Company Name",
+     "@sap.quickinfo": "Name of Company Code or Company"
+    },
+    "Country": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Country/Region Key"
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.YYMPU_GM_F4_Contracttyp": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Contract Type Search help",
+   "@sap.value.list": "true",
+   "elements": {
+    "Document_Type": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purchasing Doc. Type",
+     "@sap.quickinfo": "Purchasing Document Type",
+     "notNull": true
+    },
+    "Document_Category": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purch. Doc. Category",
+     "@sap.quickinfo": "Purchasing Document Category"
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.YYMPU_GM_PGROUP": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "F4 Help for Purchase Group",
+   "@sap.value.list": "true",
+   "elements": {
+    "Purchase_Org": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purch. Organization",
+     "@sap.quickinfo": "Purchasing Organization",
+     "notNull": true
+    },
+    "Purchase_Org_desc": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.label": "Description",
+     "@sap.quickinfo": "Description of purchasing organization"
+    },
+    "company_code": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Company Code"
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.YYMPU_GM_Vendor_f4": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Search help for Vendor",
+   "@sap.value.list": "true",
+   "elements": {
+    "vendor": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Supplier",
+     "@sap.quickinfo": "Account Number of Supplier",
+     "notNull": true
+    },
+    "Name": {
+     "type": "cds.String",
+     "length": 35,
+     "@sap.label": "Name",
+     "@sap.quickinfo": "Name 1"
+    },
+    "Country": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Country/Region Key"
+    },
+    "City": {
+     "type": "cds.String",
+     "length": 35,
+     "@sap.label": "City"
+    },
+    "Postal_code": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Postal Code"
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.ZBYGL_S2P_C_Contract": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Search Help for Contract",
+   "@sap.value.list": "true",
+   "elements": {
+    "Contract": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purchasing Document",
+     "@sap.quickinfo": "Purchasing Document Number",
+     "notNull": true
+    },
+    "company_code": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Company Code"
+    },
+    "Document_Type": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purchasing Doc. Type",
+     "@sap.quickinfo": "Purchasing Document Type"
+    },
+    "Doc_Category": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purch. Doc. Category",
+     "@sap.quickinfo": "Purchasing Document Category"
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.ZBYGL_S2P_C_Material": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Service for Material Search help",
+   "@sap.value.list": "true",
+   "elements": {
+    "material": {
+     "key": true,
+     "type": "cds.String",
+     "length": 18,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Material",
+     "@sap.quickinfo": "Material Number",
+     "notNull": true
+    },
+    "plant": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant"
+    },
+    "material_group": {
+     "type": "cds.String",
+     "length": 9,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Material Group"
+    },
+    "UOM": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Base Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "material_short_Desc": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Material Description"
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.ZBYGL_S2P_C_MPS": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "GM entity for model product spec",
+   "elements": {
+    "ID": {
+     "key": true,
+     "type": "cds.UUID",
+     "@sap.label": "UUID",
+     "@sap.quickinfo": "Model Product Specification UUID",
+     "notNull": true
+    },
+    "contract_type": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Name",
+     "@sap.quickinfo": "Name of Model Product Specification"
+    },
+    "service_material": {
+     "type": "cds.String",
+     "length": 18,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Material",
+     "@sap.quickinfo": "Material Number"
+    },
+    "service_material_desc": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.label": "Description",
+     "@sap.quickinfo": "Item Description of Model Product Specification"
+    },
+    "plant": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant"
+    },
+    "MATERIAL_GROUP": {
+     "type": "cds.String",
+     "length": 9,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Material Group"
+    },
+    "ORDER_QUANTITY": {
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "@sap.unit": "ORDER_QUANTITYUNIT",
+     "@sap.label": "Quantity",
+     "@sap.quickinfo": "Quantity of Model Product Specification Item"
+    },
+    "ORDER_QUANTITYUNIT": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Quantity Unit",
+     "@sap.quickinfo": "Model Product Specification Item: Quantity Unit",
+     "@sap.semantics": "unit-of-measure"
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.SAP__Currencies": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "elements": {
+    "CurrencyCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 5,
+     "@sap.label": "Currency",
+     "@sap.semantics": "currency-code",
+     "notNull": true
+    },
+    "ISOCode": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "ISO code",
+     "notNull": true
+    },
+    "Text": {
+     "type": "cds.String",
+     "length": 15,
+     "@sap.label": "Short text",
+     "notNull": true
+    },
+    "DecimalPlaces": {
+     "type": "cds.Integer",
+     "@odata.Type": "Edm.Byte",
+     "@sap.label": "Decimals",
+     "notNull": true
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.SAP__UnitsOfMeasure": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "elements": {
+    "UnitCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Internal UoM",
+     "@sap.semantics": "unit-of-measure",
+     "notNull": true
+    },
+    "ISOCode": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "ISO Code",
+     "notNull": true
+    },
+    "ExternalCode": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Commercial",
+     "notNull": true
+    },
+    "Text": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.label": "Measurement Unit Txt",
+     "notNull": true
+    },
+    "DecimalPlaces": {
+     "type": "cds.Integer",
+     "@sap.label": "Decimal Places"
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.SAP__MyDocumentDescriptions": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "elements": {
+    "Id": {
+     "key": true,
+     "type": "cds.UUID",
+     "@sap.label": "UUID",
+     "notNull": true
+    },
+    "CreatedBy": {
+     "type": "cds.String",
+     "length": 12,
+     "notNull": true
+    },
+    "CreatedAt": {
+     "type": "cds.DateTime",
+     "@odata.Type": "Edm.DateTime",
+     "@sap.label": "Time Stamp",
+     "notNull": true
+    },
+    "FileName": {
+     "type": "cds.String",
+     "length": 256,
+     "notNull": true
+    },
+    "Title": {
+     "type": "cds.String",
+     "length": 256,
+     "notNull": true
+    },
+    "Format": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "ZBYGL_S2P_C_SB_CONTRACT.SAP__FormatSet",
+     "on": [
+      {
+       "ref": [
+        "Format",
+        "Id"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "Id"
+       ]
+      }
+     ]
+    },
+    "TableColumns": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "ZBYGL_S2P_C_SB_CONTRACT.SAP__TableColumnsSet",
+     "cardinality": {
+      "max": "*"
+     },
+     "on": [
+      {
+       "ref": [
+        "TableColumns",
+        "Id"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "Id"
+       ]
+      }
+     ]
+    },
+    "CoverPage": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "ZBYGL_S2P_C_SB_CONTRACT.SAP__CoverPageSet",
+     "cardinality": {
+      "max": "*"
+     },
+     "on": [
+      {
+       "ref": [
+        "CoverPage",
+        "Id"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "Id"
+       ]
+      }
+     ]
+    },
+    "Signature": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "ZBYGL_S2P_C_SB_CONTRACT.SAP__SignatureSet",
+     "on": [
+      {
+       "ref": [
+        "Signature",
+        "Id"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "Id"
+       ]
+      }
+     ]
+    },
+    "PDFStandard": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "ZBYGL_S2P_C_SB_CONTRACT.SAP__PDFStandardSet",
+     "on": [
+      {
+       "ref": [
+        "PDFStandard",
+        "Id"
+       ]
+      },
+      "=",
+      {
+       "ref": [
+        "Id"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.SAP__FormatSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.pageable": "false",
+   "@sap.addressable": "false",
+   "@sap.content.version": "1",
+   "elements": {
+    "Id": {
+     "key": true,
+     "type": "cds.UUID",
+     "@sap.label": "UUID",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "FitToPage": {
+     "type": "ZBYGL_S2P_C_SB_CONTRACT.SAP__FitToPage",
+     "notNull": true
+    },
+    "FontSize": {
+     "type": "cds.Integer",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Orientation": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "PaperSize": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "BorderSize": {
+     "type": "cds.Integer",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "MarginSize": {
+     "type": "cds.Integer",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "FontName": {
+     "type": "cds.String",
+     "length": 255,
+     "@sap.label": "Font Name",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.SAP__PDFStandardSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.pageable": "false",
+   "@sap.addressable": "false",
+   "@sap.content.version": "1",
+   "elements": {
+    "Id": {
+     "key": true,
+     "type": "cds.UUID",
+     "@sap.label": "UUID",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "UsePDFAConformance": {
+     "type": "cds.Boolean",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "DoEnableAccessibility": {
+     "type": "cds.Boolean",
+     "@sap.label": "Indicator",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.SAP__TableColumnsSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.pageable": "false",
+   "@sap.addressable": "false",
+   "@sap.content.version": "1",
+   "elements": {
+    "Id": {
+     "key": true,
+     "type": "cds.UUID",
+     "@sap.label": "UUID",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Name": {
+     "key": true,
+     "type": "cds.String",
+     "length": 256,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Header": {
+     "key": true,
+     "type": "cds.String",
+     "length": 256,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "HorizontalAlignment": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.SAP__CoverPageSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.pageable": "false",
+   "@sap.addressable": "false",
+   "@sap.content.version": "1",
+   "elements": {
+    "Title": {
+     "key": true,
+     "type": "cds.String",
+     "length": 256,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Id": {
+     "key": true,
+     "type": "cds.UUID",
+     "@sap.label": "UUID",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Name": {
+     "key": true,
+     "type": "cds.String",
+     "length": 256,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Value": {
+     "type": "cds.String",
+     "length": 256,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.SAP__SignatureSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.pageable": "false",
+   "@sap.addressable": "false",
+   "@sap.content.version": "1",
+   "elements": {
+    "Id": {
+     "key": true,
+     "type": "cds.UUID",
+     "@sap.label": "UUID",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "DoSign": {
+     "type": "cds.Boolean",
+     "@sap.label": "Indicator",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Reason": {
+     "type": "cds.String",
+     "length": 256,
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.SAP__ValueHelpSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "elements": {
+    "VALUEHELP": {
+     "key": true,
+     "type": "cds.LargeString",
+     "notNull": true
+    },
+    "FIELD_VALUE": {
+     "type": "cds.String",
+     "length": 10,
+     "notNull": true
+    },
+    "DESCRIPTION": {
+     "type": "cds.LargeString"
+    }
+   }
+  },
+  "ZBYGL_S2P_C_SB_CONTRACT.SAP__FitToPage": {
+   "kind": "type",
+   "@cds.external": true,
+   "elements": {
+    "ErrorRecoveryBehavior": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.label": "Error behavior",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "IsEnabled": {
+     "type": "cds.Boolean",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "MinimumFontSize": {
+     "type": "cds.Integer",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    }
+   }
+  }
+ }
+}

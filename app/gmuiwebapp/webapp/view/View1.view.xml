@@ -1,0 +1,789 @@
+<mvc:View
+    controllerName="gmuiwebapp.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
+    <Page
+        id="idCreatePage"
+        title="{= ${localModel>/action} === 'create' ? 'Create Contract' : 'Display/Change Contract' }"
+        titleAlignment="Center"
+        showFooter="{= ${localModel>/action} === 'create' || ${localModel>/action} === 'change' ? true : false }"
+        navButtonPress="onClickDisplayChange"
+    >
+        <Table
+            id="idContractListTable"
+            width="auto"
+            class="sapUiResponsiveMargin"
+            visible="{= ${localModel>/action} === 'display' ? true : false }"
+            items="{path: 'ReadContractModel>/A_PurchaseContract/', parameters: {arrayNames:['items'], countMode:'Inline'}, sorter: {path: 'PurchaseContract'}}"
+            sticky="ColumnHeaders"
+            growing="true"
+            growingScrollToLoad="true"
+        >
+            <columns>
+                <Column hAlign="Center" width="140px">
+                    <VBox>
+                        <Text text="Contract" />
+                        <SearchField search="onContractSearchLiveChange" liveChange="onContractSearchLiveChange" placeholder="Search">
+                        <customData>
+                        <core:CustomData
+                            key="column1"
+                            value="PurchaseContract"
+                        />
+                        <core:CustomData
+                            key="column2"
+                            value="Supplier"
+                        />
+                        <core:CustomData
+                            key="column3"
+                            value="PurchaseContractType"
+                        />
+                        <core:CustomData
+                            key="column4"
+                            value="CompanyCode"
+                        />
+                        <core:CustomData
+                            key="column5"
+                            value="CreatedByUser"
+                        />
+                    </customData>
+                        </SearchField>
+                    </VBox>
+                </Column>
+                <Column hAlign="Center" width="140px">
+                    <VBox>
+                        <Text text="Grower" />
+                        <SearchField search="onContractSearchLiveChange" liveChange="onContractSearchLiveChange" placeholder="Search"
+                        />
+                    </VBox>
+                </Column>
+                <Column hAlign="Center" width="140px">
+                    <VBox>
+                        <Text text="Contract Type" />
+                        <SearchField search="onContractSearchLiveChange" liveChange="onContractSearchLiveChange" placeholder="Search"
+                        />
+                    </VBox>
+                </Column>
+                <Column hAlign="Center" width="140px">
+                    <VBox>
+                        <Text text="Plant" />
+                        <SearchField search="onContractSearchLiveChange" liveChange="onContractSearchLiveChange" placeholder="Search"
+                        />
+                    </VBox>
+                </Column>
+                <Column hAlign="Center">
+                    <Text text="Created On" />
+                </Column>
+                <Column hAlign="Center">
+                    <Text text="Valid From" />
+                </Column>
+                <Column hAlign="Center">
+                    <Text text="Valid To" />
+                </Column>
+                <Column hAlign="Center" width="140px">
+                    <VBox>
+                        <Text text="Created By" />
+                        <SearchField search="onContractSearchLiveChange" liveChange="onContractSearchLiveChange" placeholder="Search"
+                        />
+                    </VBox>
+                </Column>
+                <Column hAlign="Center">
+                    <Text text="Display/Change" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{ReadContractModel>PurchaseContract}" />
+                        <Text text="{ReadContractModel>Supplier}" />
+                        <Text text="{ReadContractModel>PurchaseContractType}" />
+                        <Text text="{ReadContractModel>CompanyCode}" />
+                        <Text
+                            text="{path: 'ReadContractModel>CreationDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern:'dd.MM.yyyy', strictParsing:true, UTC:true}}"
+                        />
+                        <Text
+                            text="{path: 'ReadContractModel>ValidityStartDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern:'dd.MM.yyyy', strictParsing:true, UTC:true}}"
+                        />
+                        <Text
+                            text="{path: 'ReadContractModel>ValidityEndDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern:'dd.MM.yyyy', strictParsing:true, UTC:true}}"
+                        />
+                        <Text text="{ReadContractModel>CreatedByUser}" />
+                        <HBox justifyContent="Center">
+                            <Button
+                                icon="sap-icon://display"
+                                tooltip="Click to Display"
+                                press="onClickDisplayChange"
+                            />
+                            <Button
+                                icon="sap-icon://edit"
+                                class="sapUiTinyMarginBegin"
+                                tooltip="Click to Change"
+                                press="onClickDisplayChange"
+                            />
+                        </HBox>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        <VBox
+            id="idContractContainer"
+            visible="{= ${localModel>/action} === 'create' ? true : false }"
+        >
+            <Panel>
+                <FlexBox justifyContent="End">
+                <Button
+                                id="idDisplayChangeToggle"
+                                icon="{= ${localModel>/action} === 'display' ? 'sap-icon://edit' : ${localModel>/action} === 'change' ? 'sap-icon://display' : '' }"
+                                tooltip="{= ${localModel>/action} === 'display' ? 'Click to Change' : ${localModel>/action} === 'change' ? 'Click to Display' : '' }"
+                                visible="{= ${localModel>/action} === 'display' || ${localModel>/action} === 'change' ? true : false }"
+                                press="onClickDisplayChange"
+                            />
+                </FlexBox>
+                <IconTabBar
+                    id="idIconTabBar"
+                    visible="true"
+                    select="onFilterSelect"
+                >
+                    <items>
+                        <IconTabFilter
+                            id="idIconTabFilterGD"
+                            text="General Data"
+                            key="GD"
+                        >
+                            <VBox id="idVBox1">
+                                <f:Form
+                                    id="idGeneralDataForm"
+                                    editable="true"
+                                >
+                                    <f:layout>
+                                        <f:ColumnLayout
+                                            columnsM="2"
+                                            columnsL="3"
+                                            columnsXL="6"
+                                        />
+                                    </f:layout>
+                                    <f:formContainers>
+                                        <f:FormContainer>
+                                            <f:formElements>
+                                                <f:FormElement
+                                                    label="Primary Grower/Organizer"
+                                                >
+                                                    <f:fields>
+                                                        <Input
+                                                            id="primaryGrower"
+                                                            description="{localModel>/Formdata/primaryGrowerDescription}"
+                                                            value="{localModel>/Formdata/primaryGrower}"
+                                                            showValueHelp="true"
+                                                            valueHelpRequest="onValueHelpClick"
+                                                            change="onFieldChange"
+                                                            required="true"
+                                                            editable="{= ${localModel>/action} === 'create' ? true : false}"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement
+                                                    label="Contract Type"
+                                                >
+                                                    <f:fields>
+                                                        <Input
+                                                            id="contractType"
+                                                            showValueHelp="true"
+                                                            valueHelpRequest="onValueHelpClick"
+                                                            required="true"
+                                                            description="{localModel>/Formdata/contractTypeDescritpion}"
+                                                            change="onFieldChange"
+                                                            value="{localModel>/Formdata/contractType}"
+                                                            editable="{= ${localModel>/action} === 'create' ? true : false}"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement
+                                                    label="Contract Date"
+                                                >
+                                                    <f:fields>
+                                                        <DatePicker
+                                                            id="contractDate"
+                                                            required="true"
+                                                            displayFormat="dd.MM.yyyy"
+                                                            valueFormat="yyyy-MM-dd"
+                                                            change=".onContractDateChange"
+                                                            value="{path: 'localModel>/Formdata/contractDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern:'dd.MM.yyyy', strictParsing:true, UTC:true}}"
+                                                            width="100%"
+                                                            editable="{= ${localModel>/action} === 'create' ? true : false}"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement label="Plant">
+                                                    <f:fields>
+                                                        <Input
+                                                            id="plant"
+                                                            showValueHelp="true"
+                                                            valueHelpRequest="onValueHelpClick"
+                                                            value="{localModel>/Formdata/plant}"
+                                                            change="onFieldChange"
+                                                            required="true"
+                                                            editable="{= ${localModel>/action} === 'create' ? true : false}"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement >
+                                                    <f:fields>
+                                                        <Input
+                                                            visible="false"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                </f:formElements>
+                                                <f:formElements>
+                                                <f:FormElement
+                                                    label="Crop Year"
+                                                >
+                                                    <f:fields>
+                                                        <Input
+                                                            id="cropYear"
+                                                            required="true"
+                                                            value="{localModel>/Formdata/cropYear}"
+                                                            change="onFieldChange"
+                                                            editable="{= ${localModel>/action} === 'create' || ${localModel>/action} === 'change' ? true : false}"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement label="Field">
+                                                    <f:fields>
+                                                        <Input
+                                                            id="field"
+                                                            showValueHelp="true"
+                                                            valueHelpRequest="onValueHelpClick"
+                                                            description="{localModel>/Formdata/fieldDescription}"
+                                                            required="true"
+                                                            change="onFieldChange"
+                                                            value="{localModel>/Formdata/field}"
+                                                            editable="{= ${localModel>/action} === 'create' || ${localModel>/action} === 'change' ? true : false}"
+                                                            type="Number"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement label="Specie">
+                                                    <f:fields>
+                                                        <Input
+                                                            id="specie"
+                                                            required="true"
+                                                            description="{localModel>/Formdata/specieDescription}"
+                                                            value="{localModel>/Formdata/specie}"
+                                                            editable="false"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement
+                                                    label="Grow Location"
+                                                >
+                                                    <f:fields>
+                                                        <Input
+                                                            id="growLocation"
+                                                            showValueHelp="true"
+                                                            valueHelpRequest="onValueHelpClick"
+                                                            value="{localModel>/Formdata/growLocation}"
+                                                            required="true"
+                                                            change="onFieldChange"
+                                                            editable="{= ${localModel>/action} === 'create' || ${localModel>/action} === 'change' ? true : false}"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement >
+                                                    <f:fields>
+                                                        <Input
+                                                            visible="false"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                </f:formElements>
+                                                <f:formElements>                                                
+                                                <f:FormElement
+                                                    label="Estimated Contracted Area"
+                                                >
+                                                    <f:fields>
+                                                        <Input
+                                                            id="estimatedContractedArea"
+                                                            required="true"
+                                                            editable="false"
+                                                            description="{localModel>/Formdata/estimatedContractedAreaDescription}"
+                                                            value="{localModel>/Formdata/estimatedContractedArea}"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement
+                                                    label="Estimated Yield Per Area UoM"
+                                                >
+                                                    <f:fields>
+                                                        <Input
+                                                            id="estimatedYieldPerAreaUoM"
+                                                            required="true"
+                                                            editable="false"
+                                                            description="{localModel>/Formdata/estimatedYieldPerAreaUoMDescription}"
+                                                            value="{localModel>/Formdata/estimatedYieldPerAreaUoM}"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement
+                                                    label="Estimated Gross Yield"
+                                                >
+                                                    <f:fields>
+                                                        <Input
+                                                            id="estimatedGrossYield"
+                                                            editable="false"
+                                                            description="{localModel>/Formdata/estimatedGrossYieldDescription}"
+                                                            value="{localModel>/Formdata/estimatedGrossYield}"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement
+                                                    label="Pricing Source"
+                                                >
+                                                    <f:fields>
+                                                        <Select
+                                                            id="pricingSource"
+                                                            change="onPricingSourceSelect"
+                                                            required="true"
+                                                            editable="{= ${localModel>/action} === 'create' ? true : false}"
+                                                        >
+                                                            <items>
+                                                                <core:Item
+                                                                    key="Fixed"
+                                                                    text="Fixed"
+                                                                />
+                                                                <core:Item
+                                                                    key="Elevator"
+                                                                    text="Elevator"
+                                                                />
+                                                                <core:Item
+                                                                    key="BMF"
+                                                                    text="BMF"
+                                                                />
+                                                                <core:Item
+                                                                    key="CBOT"
+                                                                    text="CBOT"
+                                                                />
+                                                                <core:Item
+                                                                    key="Portland Grain"
+                                                                    text="Portland Grain"
+                                                                />
+                                                                <core:Item
+                                                                    key="Rosario Trade Board"
+                                                                    text="Rosario Trade Board"
+                                                                />
+                                                                <core:Item
+                                                                    key="Safras e Mercados"
+                                                                    text="Safras e Mercados"
+                                                                />
+                                                            </items>
+                                                        </Select>
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement
+                                                    label="Elevator"
+                                                    id="elementElevator"
+                                                    visible="false"
+                                                >
+                                                    <f:fields>
+                                                        <Input
+                                                            id="elevator"
+                                                            showValueHelp="true"
+                                                            valueHelpRequest="onValueHelpClick"
+                                                            required="true"
+                                                            value="{localModel>/Formdata/elevator}"
+                                                            editable="{= ${localModel>/action} === 'create' || ${localModel>/action} === 'change' ? true : false}"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                            </f:formElements>
+                                        </f:FormContainer>
+                                    </f:formContainers>
+                                </f:Form>
+                            </VBox>
+                        </IconTabFilter>
+                        <IconTabFilter
+                            text="Crop / Region Specific"
+                            id="idIconTabFilterCrop"
+                            key="CS"
+                        >
+                            <VBox id="idVBox3">
+                                <f:Form
+                                    id="idCropForm"
+                                    editable="true"
+                                >
+                                    <f:layout>
+                                        <f:ColumnLayout
+                                            columnsM="2"
+                                            columnsL="3"
+                                            columnsXL="6"
+                                        />
+                                    </f:layout>
+                                    <f:formContainers>
+                                        <f:FormContainer>
+                                            <f:formElements>
+                                                <f:FormElement
+                                                    label="Guarantee Yield"
+                                                >
+                                                    <f:fields>
+                                                        <Input
+                                                            id="idGuarenteeYield"
+                                                            value="{localModel>/Formdata/guaranteeYield}"
+                                                            description="{localModel>/Formdata/guaranteeYieldDescription}"
+                                                            editable="{= ${localModel>/action} === 'create' || ${localModel>/action} === 'change' ? true : false}"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement>
+                                                    <f:fields>
+                                                        <RadioButtonGroup editable="{= ${localModel>/action} === 'create' || ${localModel>/action} === 'change' ? true : false}">
+                                                            <RadioButton
+                                                                id="idRB1"
+                                                                text="Yield Index Premium"
+                                                                class="sapUiMediumMarginBottom sapUiTinyMarginTop"
+                                                                editable="true"
+                                                                selected="true"
+                                                            />
+                                                            <RadioButton
+                                                                id="idRB2"
+                                                                text="Single Field Contract"
+                                                                class="sapUiSmallMarginBottom"
+                                                                editable="true"
+                                                                selected="false"
+                                                            />
+                                                        </RadioButtonGroup>
+                                                    </f:fields>
+                                                </f:FormElement>
+                                            </f:formElements>
+                                        </f:FormContainer>
+                                    </f:formContainers>
+                                </f:Form>
+                            </VBox>
+                        </IconTabFilter>
+                        <IconTabFilter
+                            id="idIconTabFilterGS"
+                            text="Grower Splits"
+                            key="GS"
+                            enabled="true"
+                        >
+                            <Table
+                                id="splitTable"
+                                width="auto"
+                                class="sapUiResponsiveMargin"
+                                items="{localModel>/items}"
+                            >
+                                <columns>
+                                    <Column>
+                                        <Text text="Partner" />
+                                    </Column>
+                                    <Column>
+                                        <Text text="Name" />
+                                    </Column>
+                                    <Column>
+                                        <Text text="Role" />
+                                    </Column>
+                                    <Column>
+                                        <Text text="Role Description" />
+                                    </Column>
+                                    <Column>
+                                        <Text text="Delete Row" />
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <Text text="{localModel>Partner}" />
+                                            <Text text="{localModel>Name}" />
+                                            <Text text="{localModel>Role}" />
+                                            <Text
+                                                text="{localModel>RoleDescription}"
+                                            />
+                                            <Button
+                                                icon="sap-icon://delete"
+                                                press="onDeleteButton"
+                                                enabled="{= ${localModel>Role} !== 'P' }"
+                                            />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                            <FlexBox
+                                alignItems="End"
+                                justifyContent="End"
+                                class="sapUiResponsiveMargin"
+                            >
+                                <Button
+                                    id="addPartner"
+                                    text="Add Partner"
+                                    press="onValueHelpClick"
+                                    enabled="false"
+                                />
+                            </FlexBox>
+                                    <Table
+                                        id="attorney"
+                                        width="auto"
+                                        sticky="ColumnHeaders"
+                                        class="sapUiResponsiveMargin"
+                                        items="{
+                                path: 'localModel>/partnerActivities',
+                                 sorter: [
+                                            {path: 'Activity_No'}
+                                        ]
+                                }"
+                                    >
+                                        <columns>
+                                            <Column>
+                                                <HBox>
+                                                    <Text text="Partner" />
+                                                    <core:Icon
+                                                        id="partnerSortIcon"
+                                                        src="sap-icon://sort"
+                                                        width="20px"
+                                                        size="80%"
+                                                        press="onSortIconPress"
+                                                    />
+                                                </HBox>
+                                            </Column>
+                                            <Column>
+                                                <Text text="Name" />
+                                            </Column>
+                                            <Column>
+                                                <Text text="Role" />
+                                            </Column>
+                                            <Column>
+                                                <HBox>
+                                                    <Text text="Activity No." />
+                                                    <core:Icon
+                                                        id="activitySortIcon"
+                                                        src="sap-icon://sort"
+                                                        width="20px"
+                                                        size="80%"
+                                                        press="onSortIconPress"
+                                                    />
+                                                </HBox>
+                                            </Column>
+                                            <Column>
+                                                <Text
+                                                    text="Activity Description"
+                                                />
+                                            </Column>
+                                            <Column>
+                                                <Text text="Percentage" />
+                                            </Column>
+                                            <Column>
+                                                <Text
+                                                    text="Power of Attorney"
+                                                />
+                                            </Column>
+                                        </columns>
+
+                                        <items>
+                                            <ColumnListItem>
+                                                <Text
+                                                    text="{localModel>Partner}"
+                                                />
+                                                <Text
+                                                    text="{localModel>Name}"
+                                                />
+                                                <Text
+                                                    text="{localModel>Role}"
+                                                />
+                                                <Text
+                                                    text="{localModel>Activity_No}"
+                                                />
+                                                <Text
+                                                    text="{localModel>Activity_Desc}"
+                                                />
+                                                <Input
+                                                    value="{localModel>Percentage}"
+                                                    type="Number"
+                                                />
+                                                <Input
+                                                    value="{localModel>Power_of_Attrn}"
+                                                    showValueHelp="true"
+                                                    type="Number"
+                                                    valueHelpRequest="onValueHelpClick"
+                                                />
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                        </IconTabFilter>
+                        <IconTabFilter
+                            id="idIconTabFilterStatus"
+                            text="Status"
+                            visible="{= ${localModel>/action} === 'display' || ${localModel>/action} === 'change' ? true : false}"
+                        >
+                            <VBox id="idVBox2">
+                                <f:Form
+                                    id="idStatusForm"
+                                    editable="true"
+                                >
+                                    <f:layout>
+                                        <f:ColumnLayout
+                                            columnsM="2"
+                                            columnsL="3"
+                                            columnsXL="6"
+                                        />
+                                    </f:layout>
+                                    <f:formContainers>
+                                        <f:FormContainer>
+                                            <f:formElements>
+                                                <f:FormElement>
+                                                    <f:fields>
+                                                        <CheckBox
+                                                            id="idPlantingFinal"
+                                                            text="Planting Final"
+                                                            editable="false"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement>
+                                                    <f:fields>
+                                                        <CheckBox
+                                                            id="idAreaConfm"
+                                                            text="Area Confirmed"
+                                                            editable="false"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement>
+                                                    <f:fields>
+                                                        <CheckBox
+                                                            id="idContractFinal"
+                                                            text="Contract Final"
+                                                            editable="false"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                                <f:FormElement>
+                                                    <f:fields>
+                                                        <Button
+                                                            text="Release for Pricing"
+                                                            id="idBtnPricing"
+                                                            width="50%"
+                                                            enabled="{= ${localModel>/action} === 'change' ? true : false}"
+                                                            icon="sap-icon://internet-browser"
+                                                        />
+                                                    </f:fields>
+                                                </f:FormElement>
+                                            </f:formElements>
+                                        </f:FormContainer>
+                                    </f:formContainers>
+                                </f:Form>
+                            </VBox>
+                        </IconTabFilter>
+                    </items>
+                </IconTabBar>
+            </Panel>
+            <Panel headerText="Item Data">
+                <Table
+                    id="idItemTable"
+                    width="auto"
+                    class="sapUiResponsiveMargin"
+                    items="{localModel>/itemTableData}"
+                    itemPress="itemtableItemPress"
+                >
+                    <columns>
+                        <Column
+                            width="100px"
+                            hAlign="Center"
+                        >
+                            <Text text="Item" />
+                        </Column>
+                        <Column
+                            width="150px"
+                            hAlign="Center"
+                        >
+                            <Text text="Material" />
+                        </Column>
+                        <Column hAlign="Center">
+                            <Text text="Material Description" />
+                        </Column>
+                        <Column
+                            width="100px"
+                            hAlign="Center"
+                        >
+                            <Text text="Quantity" />
+                        </Column>
+                        <Column
+                            width="100px"
+                            hAlign="Center"
+                        >
+                            <Text text="UoM" />
+                        </Column>
+                        <Column
+                            width="150px"
+                            hAlign="Center"
+                        >
+                            <Text text="Sub-Field Number" />
+                        </Column>
+                        <Column
+                            width="150px"
+                            hAlign="Center"
+                        >
+                            <Text text="Tracking Number" />
+                        </Column>
+                        <Column
+                            width="100px"
+                            hAlign="Center"
+                        >
+                            <Text text="Delete Row" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{localModel>Item}" />
+                                <Text text="{localModel>Material}" />
+                                <Text text="{localModel>MaterialDescription}" />
+                                <Input
+                                    value="{localModel>Quantity}"
+                                    editable="{= ${localModel>/action} === 'create' || ${localModel>/action} === 'change' ? true : false}"
+                                />
+                                <Text text="{localModel>UoM}" />
+                                <Input
+                                    value="{localModel>SubFieldNumber}"
+                                    editable="{= ${localModel>/action} === 'create' || ${localModel>/action} === 'change' ? true : false}"
+                                />
+                                <Input
+                                    value="{localModel>TrackingNumber}"
+                                    editable="{= ${localModel>/action} === 'create' ? true : false}"
+                                />
+                                <Button
+                                    icon="sap-icon://delete"
+                                    press="onDeleteMaterial"
+                                    enabled="{= ${localModel>/action} === 'create' || ${localModel>/action} === 'change' ? true : false}"
+                                />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+                <FlexBox
+                    alignItems="End"
+                    justifyContent="End"
+                    class="sapUiResponsiveMargin"
+                >
+                    <Button
+                        id="idAddMaterial"
+                        text="Add Material"
+                        press="onAddMaterialPress"
+                        enabled="{= ${localModel>/action} === 'create' || ${localModel>/action} === 'change' ? true : false}"
+                    />
+                </FlexBox>
+            </Panel>
+        </VBox>
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button
+                    text="Submit"
+                    press="onSubmitPress"
+                    type="Emphasized"
+                />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

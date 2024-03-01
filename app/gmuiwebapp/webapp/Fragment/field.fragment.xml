@@ -1,0 +1,85 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        title="Field Selection"
+        contentWidth="500px"
+        contentHeight="400px"
+    >
+        <OverflowToolbar>
+            <SearchField
+                liveChange="onSearchPressLiveChange"
+                search="onSearchPressLiveChange"
+                width="45%"
+                placeholder=""
+            >
+                <customData>
+                    <core:CustomData
+                        key="column1"
+                        value="Field_Number"
+                    />
+                    <core:CustomData
+                        key="column2"
+                        value="Common_Name"
+                    />
+                </customData>
+            </SearchField>
+            <SearchField
+                liveChange="onSearchPressLiveChange"
+                search="onSearchPressLiveChange"
+                width="45%"
+                placeholder=""
+            >
+                <customData>
+                    <core:CustomData
+                        key="column1"
+                        value="Field_Number"
+                    />
+                    <core:CustomData
+                        key="column2"
+                        value="Common_Name"
+                    />
+                </customData>
+            </SearchField>
+        </OverflowToolbar>
+        <Table
+            items="{mainModel>/Field_Table}"
+            mode="SingleSelectLeft"
+        >
+            <items>
+                <ColumnListItem type="Active">
+                    <cells>
+                        <Text text="{
+                        path: 'mainModel>Field_Number',
+                        formatter: '.Formatter.formatNumberWithoutCommas'}" />
+                        <Text text="{mainModel>Common_Name}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+            <columns>
+                <Column>
+                    <header>
+                        <Label text="Field Number" />
+                    </header>
+                </Column>
+                <Column>
+                    <header>
+                        <Label text="Common Name" />
+                    </header>
+                </Column>
+            </columns>
+        </Table>
+        <buttons>
+            <Button
+                text="OK"
+                press="onOkDialog"
+                type="Emphasized"
+            />
+            <Button
+                text="Close"
+                press=".onCloseDialog"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

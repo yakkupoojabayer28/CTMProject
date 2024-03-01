@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+    <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+    <Schema Namespace="metadata" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="EntityContainer">
+        <EntitySet Name="YYMPU_C_EKKO" EntityType="metadata.YYMPU_C_EKKO">
+          <NavigationPropertyBinding Path="to_EKPO" Target="YYMPU_C_EKPO"/>
+        </EntitySet>
+        <EntitySet Name="YYMPU_C_EKPO" EntityType="metadata.YYMPU_C_EKPO">
+          <NavigationPropertyBinding Path="to_EKKO" Target="YYMPU_C_EKKO"/>
+        </EntitySet>
+        <EntitySet Name="YYMPU_C_PLANT" EntityType="metadata.YYMPU_C_PLANT"/>
+        <EntitySet Name="YYMPU_GM_F4_BUKRS" EntityType="metadata.YYMPU_GM_F4_BUKRS"/>
+        <EntitySet Name="YYMPU_GM_F4_Contracttyp" EntityType="metadata.YYMPU_GM_F4_Contracttyp"/>
+        <EntitySet Name="YYMPU_GM_PGROUP" EntityType="metadata.YYMPU_GM_PGROUP"/>
+        <EntitySet Name="YYMPU_GM_Vendor_f4" EntityType="metadata.YYMPU_GM_Vendor_f4"/>
+        <EntitySet Name="ZBYGL_S2P_C_Contract" EntityType="metadata.ZBYGL_S2P_C_Contract"/>
+        <EntitySet Name="ZBYGL_S2P_C_Material" EntityType="metadata.ZBYGL_S2P_C_Material"/>
+        <EntitySet Name="ZBYGL_S2P_C_MPS" EntityType="metadata.ZBYGL_S2P_C_MPS"/>
+        <EntitySet Name="SAP__Currencies" EntityType="metadata.SAP__Currencies"/>
+        <EntitySet Name="SAP__UnitsOfMeasure" EntityType="metadata.SAP__UnitsOfMeasure"/>
+        <EntitySet Name="SAP__MyDocumentDescriptions" EntityType="metadata.SAP__MyDocumentDescriptions">
+          <NavigationPropertyBinding Path="Format" Target="SAP__FormatSet"/>
+          <NavigationPropertyBinding Path="TableColumns" Target="SAP__TableColumnsSet"/>
+          <NavigationPropertyBinding Path="CoverPage" Target="SAP__CoverPageSet"/>
+          <NavigationPropertyBinding Path="Signature" Target="SAP__SignatureSet"/>
+          <NavigationPropertyBinding Path="PDFStandard" Target="SAP__PDFStandardSet"/>
+        </EntitySet>
+        <EntitySet Name="SAP__FormatSet" EntityType="metadata.SAP__FormatSet"/>
+        <EntitySet Name="SAP__PDFStandardSet" EntityType="metadata.SAP__PDFStandardSet"/>
+        <EntitySet Name="SAP__TableColumnsSet" EntityType="metadata.SAP__TableColumnsSet"/>
+        <EntitySet Name="SAP__CoverPageSet" EntityType="metadata.SAP__CoverPageSet"/>
+        <EntitySet Name="SAP__SignatureSet" EntityType="metadata.SAP__SignatureSet"/>
+        <EntitySet Name="SAP__ValueHelpSet" EntityType="metadata.SAP__ValueHelpSet"/>
+      </EntityContainer>
+      <EntityType Name="YYMPU_C_EKKO">
+        <Key>
+          <PropertyRef Name="Contract"/>
+        </Key>
+        <Property Name="Contract" Type="Edm.String" MaxLength="10" Nullable="false"/>
+        <Property Name="Delete_mc" Type="Edm.Boolean"/>
+        <Property Name="Update_mc" Type="Edm.Boolean"/>
+        <Property Name="to_EKPO_oc" Type="Edm.Boolean"/>
+        <Property Name="company_code" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Document_Category" Type="Edm.String" MaxLength="1"/>
+        <Property Name="create_date" Type="Edm.Date"/>
+        <Property Name="Document_Type" Type="Edm.String" MaxLength="4"/>
+        <Property Name="vendor" Type="Edm.String" MaxLength="10"/>
+        <Property Name="Purchase_org" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Purchase_group" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Currency" Type="Edm.String" MaxLength="5"/>
+        <Property Name="validity_start_d" Type="Edm.Date"/>
+        <Property Name="validity_end_d" Type="Edm.Date"/>
+        <NavigationProperty Name="to_EKPO" Type="Collection(metadata.YYMPU_C_EKPO)">
+          <OnDelete Action="Cascade"/>
+        </NavigationProperty>
+      </EntityType>
+      <EntityType Name="YYMPU_C_EKPO">
+        <Key>
+          <PropertyRef Name="Contract"/>
+          <PropertyRef Name="Contract_Item"/>
+        </Key>
+        <Property Name="Contract" Type="Edm.String" MaxLength="10" Nullable="false"/>
+        <Property Name="Contract_Item" Type="Edm.String" MaxLength="5" Nullable="false"/>
+        <Property Name="Delete_mc" Type="Edm.Boolean"/>
+        <Property Name="Update_mc" Type="Edm.Boolean"/>
+        <Property Name="company_code" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Document_Type" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Document_Category" Type="Edm.String" MaxLength="1"/>
+        <Property Name="create_date" Type="Edm.Date"/>
+        <Property Name="vendor" Type="Edm.String" MaxLength="10"/>
+        <Property Name="Purchase_org" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Purchase_group" Type="Edm.String" MaxLength="3"/>
+        <Property Name="validity_start_d" Type="Edm.Date"/>
+        <Property Name="validity_end_d" Type="Edm.Date"/>
+        <Property Name="Material" Type="Edm.String" MaxLength="18"/>
+        <Property Name="Plant" Type="Edm.String" MaxLength="4"/>
+        <Property Name="material_desc" Type="Edm.String" MaxLength="40"/>
+        <Property Name="Target_unit" Type="Edm.String" MaxLength="3"/>
+        <Property Name="Target_qty" Type="Edm.Decimal" Scale="3" Precision="13"/>
+        <Property Name="Currency" Type="Edm.String" MaxLength="5"/>
+        <Property Name="Netprice" Type="Edm.Decimal" Scale="3" Precision="11"/>
+        <Property Name="Price_unit" Type="Edm.Decimal" Scale="0" Precision="5"/>
+        <NavigationProperty Name="to_EKKO" Type="metadata.YYMPU_C_EKKO">
+          <ReferentialConstraint Property="Contract" ReferencedProperty="Contract"/>
+        </NavigationProperty>
+      </EntityType>
+      <EntityType Name="YYMPU_C_PLANT">
+        <Key>
+          <PropertyRef Name="plant"/>
+        </Key>
+        <Property Name="plant" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="plant_name" Type="Edm.String" MaxLength="30"/>
+      </EntityType>
+      <EntityType Name="YYMPU_GM_F4_BUKRS">
+        <Key>
+          <PropertyRef Name="company_code"/>
+        </Key>
+        <Property Name="company_code" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Company_code_name" Type="Edm.String" MaxLength="25"/>
+        <Property Name="Country" Type="Edm.String" MaxLength="3"/>
+      </EntityType>
+      <EntityType Name="YYMPU_GM_F4_Contracttyp">
+        <Key>
+          <PropertyRef Name="Document_Type"/>
+        </Key>
+        <Property Name="Document_Type" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Document_Category" Type="Edm.String" MaxLength="1"/>
+      </EntityType>
+      <EntityType Name="YYMPU_GM_PGROUP">
+        <Key>
+          <PropertyRef Name="Purchase_Org"/>
+        </Key>
+        <Property Name="Purchase_Org" Type="Edm.String" MaxLength="4" Nullable="false"/>
+        <Property Name="Purchase_Org_desc" Type="Edm.String" MaxLength="20"/>
+        <Property Name="company_code" Type="Edm.String" MaxLength="4"/>
+      </EntityType>
+      <EntityType Name="YYMPU_GM_Vendor_f4">
+        <Key>
+          <PropertyRef Name="vendor"/>
+        </Key>
+        <Property Name="vendor" Type="Edm.String" MaxLength="10" Nullable="false"/>
+        <Property Name="Name" Type="Edm.String" MaxLength="35"/>
+        <Property Name="Country" Type="Edm.String" MaxLength="3"/>
+        <Property Name="City" Type="Edm.String" MaxLength="35"/>
+        <Property Name="Postal_code" Type="Edm.String" MaxLength="10"/>
+      </EntityType>
+      <EntityType Name="ZBYGL_S2P_C_Contract">
+        <Key>
+          <PropertyRef Name="Contract"/>
+        </Key>
+        <Property Name="Contract" Type="Edm.String" MaxLength="10" Nullable="false"/>
+        <Property Name="company_code" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Document_Type" Type="Edm.String" MaxLength="4"/>
+        <Property Name="Doc_Category" Type="Edm.String" MaxLength="1"/>
+      </EntityType>
+      <EntityType Name="ZBYGL_S2P_C_Material">
+        <Key>
+          <PropertyRef Name="material"/>
+        </Key>
+        <Property Name="material" Type="Edm.String" MaxLength="18" Nullable="false"/>
+        <Property Name="plant" Type="Edm.String" MaxLength="4"/>
+        <Property Name="material_group" Type="Edm.String" MaxLength="9"/>
+        <Property Name="UOM" Type="Edm.String" MaxLength="3"/>
+        <Property Name="material_short_Desc" Type="Edm.String" MaxLength="40"/>
+      </EntityType>
+      <EntityType Name="ZBYGL_S2P_C_MPS">
+        <Key>
+          <PropertyRef Name="ID"/>
+        </Key>
+        <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+        <Property Name="contract_type" Type="Edm.String" MaxLength="40"/>
+        <Property Name="service_material" Type="Edm.String" MaxLength="18"/>
+        <Property Name="service_material_desc" Type="Edm.String" MaxLength="40"/>
+        <Property Name="plant" Type="Edm.String" MaxLength="4"/>
+        <Property Name="MATERIAL_GROUP" Type="Edm.String" MaxLength="9"/>
+        <Property Name="ORDER_QUANTITY" Type="Edm.Decimal" Scale="3" Precision="13"/>
+        <Property Name="ORDER_QUANTITYUNIT" Type="Edm.String" MaxLength="3"/>
+      </EntityType>
+      <EntityType Name="SAP__Currencies">
+        <Key>
+          <PropertyRef Name="CurrencyCode"/>
+        </Key>
+        <Property Name="CurrencyCode" Type="Edm.String" MaxLength="5" Nullable="false"/>
+        <Property Name="ISOCode" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="Text" Type="Edm.String" MaxLength="15" Nullable="false"/>
+        <Property Name="DecimalPlaces" Type="Edm.Byte" Nullable="false"/>
+      </EntityType>
+      <EntityType Name="SAP__UnitsOfMeasure">
+        <Key>
+          <PropertyRef Name="UnitCode"/>
+        </Key>
+        <Property Name="UnitCode" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="ISOCode" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="ExternalCode" Type="Edm.String" MaxLength="3" Nullable="false"/>
+        <Property Name="Text" Type="Edm.String" MaxLength="30" Nullable="false"/>
+        <Property Name="DecimalPlaces" Type="Edm.Int32"/>
+      </EntityType>
+      <EntityType Name="SAP__MyDocumentDescriptions">
+        <Key>
+          <PropertyRef Name="Id"/>
+        </Key>
+        <Property Name="Id" Type="Edm.Guid" Nullable="false"/>
+        <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" Nullable="false"/>
+        <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Nullable="false"/>
+        <Property Name="FileName" Type="Edm.String" MaxLength="256" Nullable="false"/>
+        <Property Name="Title" Type="Edm.String" MaxLength="256" Nullable="false"/>
+        <NavigationProperty Name="Format" Type="metadata.SAP__FormatSet">
+          <ReferentialConstraint Property="Id" ReferencedProperty="Id"/>
+        </NavigationProperty>
+        <NavigationProperty Name="TableColumns" Type="Collection(metadata.SAP__TableColumnsSet)"/>
+        <NavigationProperty Name="CoverPage" Type="Collection(metadata.SAP__CoverPageSet)"/>
+        <NavigationProperty Name="Signature" Type="metadata.SAP__SignatureSet">
+          <ReferentialConstraint Property="Id" ReferencedProperty="Id"/>
+        </NavigationProperty>
+        <NavigationProperty Name="PDFStandard" Type="metadata.SAP__PDFStandardSet">
+          <ReferentialConstraint Property="Id" ReferencedProperty="Id"/>
+        </NavigationProperty>
+      </EntityType>
+      <EntityType Name="SAP__FormatSet">
+        <Key>
+          <PropertyRef Name="Id"/>
+        </Key>
+        <Property Name="Id" Type="Edm.Guid" Nullable="false"/>
+        <Property Name="FitToPage" Type="metadata.SAP__FitToPage" Nullable="false"/>
+        <Property Name="FontSize" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="Orientation" Type="Edm.String" MaxLength="10" Nullable="false"/>
+        <Property Name="PaperSize" Type="Edm.String" MaxLength="10" Nullable="false"/>
+        <Property Name="BorderSize" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="MarginSize" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="FontName" Type="Edm.String" MaxLength="255" Nullable="false"/>
+      </EntityType>
+      <EntityType Name="SAP__PDFStandardSet">
+        <Key>
+          <PropertyRef Name="Id"/>
+        </Key>
+        <Property Name="Id" Type="Edm.Guid" Nullable="false"/>
+        <Property Name="UsePDFAConformance" Type="Edm.Boolean" Nullable="false"/>
+        <Property Name="DoEnableAccessibility" Type="Edm.Boolean" Nullable="false"/>
+      </EntityType>
+      <EntityType Name="SAP__TableColumnsSet">
+        <Key>
+          <PropertyRef Name="Id"/>
+          <PropertyRef Name="Name"/>
+          <PropertyRef Name="Header"/>
+        </Key>
+        <Property Name="Id" Type="Edm.Guid" Nullable="false"/>
+        <Property Name="Name" Type="Edm.String" MaxLength="256" Nullable="false"/>
+        <Property Name="Header" Type="Edm.String" MaxLength="256" Nullable="false"/>
+        <Property Name="HorizontalAlignment" Type="Edm.String" MaxLength="10" Nullable="false"/>
+      </EntityType>
+      <EntityType Name="SAP__CoverPageSet">
+        <Key>
+          <PropertyRef Name="Title"/>
+          <PropertyRef Name="Id"/>
+          <PropertyRef Name="Name"/>
+        </Key>
+        <Property Name="Title" Type="Edm.String" MaxLength="256" Nullable="false"/>
+        <Property Name="Id" Type="Edm.Guid" Nullable="false"/>
+        <Property Name="Name" Type="Edm.String" MaxLength="256" Nullable="false"/>
+        <Property Name="Value" Type="Edm.String" MaxLength="256" Nullable="false"/>
+      </EntityType>
+      <EntityType Name="SAP__SignatureSet">
+        <Key>
+          <PropertyRef Name="Id"/>
+        </Key>
+        <Property Name="Id" Type="Edm.Guid" Nullable="false"/>
+        <Property Name="DoSign" Type="Edm.Boolean" Nullable="false"/>
+        <Property Name="Reason" Type="Edm.String" MaxLength="256" Nullable="false"/>
+      </EntityType>
+      <EntityType Name="SAP__ValueHelpSet">
+        <Key>
+          <PropertyRef Name="VALUEHELP"/>
+        </Key>
+        <Property Name="VALUEHELP" Type="Edm.String" Nullable="false"/>
+        <Property Name="FIELD_VALUE" Type="Edm.String" MaxLength="10" Nullable="false"/>
+        <Property Name="DESCRIPTION" Type="Edm.String"/>
+      </EntityType>
+      <ComplexType Name="SAP__FitToPage">
+        <Property Name="ErrorRecoveryBehavior" Type="Edm.String" MaxLength="8" Nullable="false"/>
+        <Property Name="IsEnabled" Type="Edm.Boolean" Nullable="false"/>
+        <Property Name="MinimumFontSize" Type="Edm.Int32" Nullable="false"/>
+      </ComplexType>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

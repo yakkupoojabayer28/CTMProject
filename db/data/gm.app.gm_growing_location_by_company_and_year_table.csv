@@ -1,0 +1,3 @@
+﻿Client,Company_Code,Crop_Year,Plant,Grow_Location,Production_Season_ID,Irrigation_flag,Area_Base_Yield_Designated_Flag,GYI_Ranking_Group,Sign_Off,Estimated_CCE_Bushels_Acre,Actual_CCE_Bushels_Acre,Male_Compensation_for_Grower_Accounting,Cost_Center,Grain_Discount,Good_Planting_Window,Best_Planting_Window,Intermediate_Planting_Window
+300,1710,2022,1710,1,00,Y,X,0,,215,215,0.00,,0.00,,,
+300,1710,2022,1710,2,A,Y,X,0,,215,215,0.00,,0.00,,,
